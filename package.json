@@ -1,0 +1,22 @@
+{
+  "name": "lunnar-provita",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Celestemhp/new-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Celestemhp/new-theme/issues"
+  },
+  "homepage": "https://github.com/Celestemhp/new-theme#readme",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
