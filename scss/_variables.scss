@@ -1,0 +1,160 @@
+/*
+    Colors
+*/
+
+$colors: (
+    // dark-blue
+    "dark-blue": #102343,
+    "dark-blue-500": #102343,
+
+    // black
+    "black": #102343,
+    "black-500": #102343,
+
+    // orange
+    "orange": #ee8251,
+    "orange-400": #f4a97b,
+    "orange-500": #ee8251,
+    "orange-600": #cc5f3b,
+
+    // white
+    "white": #ffffff,
+    "white-500": #ffffff,
+
+    // beige
+    "beige": #f0ede6,
+    "beige-500": #f0ede6,
+
+    // mint
+    "mint": #8fc0a9,
+    "mint-500": #8fc0a9,
+    "mint-600": #68a58e,
+
+    // rosa
+    "rosa": #e1918f,
+    "rosa-400": #d7afae,
+    "rosa-500": #e1918f,
+    "rosa-600": #93605f,
+
+    // green
+    "green": #4a7c59,
+    "green-500": #4a7c59,
+
+    // grey
+    "grey": #d9d9d9,
+    "grey-400": #8d8d8d,
+    "grey-500": #d9d9d9,
+    "grey-700": #4e5a65,
+
+    // brown
+    "brown": #735446,
+    "brown-200": #806356,
+    "brown-500": #735446,
+
+    // red
+    "red": #d75252,
+    "red-500": #d75252,
+
+    // background
+    "background": #eceae9,
+
+    // link
+    "link": #6f4cd3
+);
+
+/*
+    Get color RGB value
+*/
+@function toRGB($color) {
+    @return red($color) + ", " + green($color) + ", " + blue($color);
+}
+
+/*
+    Get contrasting color
+*/
+@function color-contrast($color) {
+    $color-brightness: round(
+        calc(
+            red($color) * 299 + green($color) * 587 + blue($color) * 114 / 1000
+        )
+    );
+    $light-color: round(
+        calc(
+            red(#ffffff) * 299 + green(#ffffff) * 587 + blue(#ffffff) * 114 /
+                1000
+        )
+    );
+
+    @if abs($color-brightness) < (calc($light-color / 2)) {
+        @return white;
+    }
+
+    @return black;
+}
+
+:root {
+    @each $name, $color in $colors {
+        --color-#{$name}: #{$color};
+        --color-#{$name}-rgb: #{toRGB($color)};
+
+        --color-#{$name}: #{$color};
+
+        --color-#{$name}-contrast: var(--color-white);
+
+        // contrasts
+        @if ($name == "mint") {
+            --color-#{$name}-contrast: var(--color-dark-blue);
+        }
+        @if ($name == "rosa") {
+            --color-#{$name}-contrast: var(--color-dark-blue);
+        }
+        @if ($name == "grey") {
+            --color-#{$name}-contrast: var(--color-dark-blue);
+        }
+    }
+
+    --color-background: #fafafa;
+
+    --border-radius: 0;
+    --border-radius-small: 1rem;
+
+    // buttons
+    --button-border-radius: 0.3rem;
+
+    // containers
+
+    --container: 52rem;
+    --container-wide: 74rem;
+    --container-padding: 2rem;
+
+    --container-text-width: 52rem;
+
+    // font sizes and line heights
+    --font: "Mulish", sans-serif;
+
+    --font-size: 1rem;
+    --font-size-h1: 1.8rem;
+    --font-size-h2: 1.5rem;
+    --font-size-h3: 1.3rem;
+    --font-size-h4: 1.1rem;
+    --heading-line-height: 1.25;
+
+    --line-height: 1.65;
+
+    --font-weight-light: 200;
+
+    @media (min-width: 768px) {
+        --font-size-h1: 2.75rem;
+        --font-size-h2: 2.5rem;
+        --font-size-h3: 2rem;
+        --font-size-h4: 1.5rem;
+        --font-size-h5: 1.1rem;
+        --font-size-h6: 1rem;
+    }
+}
+
+$breakpoint-xs: 575px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoing-xl: 1600px;

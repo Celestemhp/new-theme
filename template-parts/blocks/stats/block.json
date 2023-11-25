@@ -1,0 +1,15 @@
+{
+    "name": "acf/stas",
+    "title": "Hagtøl",
+    "description": "",
+    "style": ["file:../../../css/block-stats.min.css"],
+    "script": "block-stats",
+    "category": "lunnar-blocks",
+    "icon": "admin-post",
+    "keywords": ["stats"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "stats.php"
+    },
+    "align": "wide"
+}

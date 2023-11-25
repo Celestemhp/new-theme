@@ -1,0 +1,174 @@
+.lunnar-embed {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+.lunnar-embed .embed--image {
+  position: relative;
+  width: 100%;
+}
+.lunnar-embed .embed--image img {
+  width: 100%;
+  max-width: 100%;
+}
+.lunnar-embed .embed--description {
+  font-size: 15px;
+  line-height: 1.4;
+  font-style: italic;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .lunnar-embed .embed--description {
+    font-size: 17px;
+    text-align: left;
+  }
+}
+.lunnar-embed .embed-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+}
+.lunnar-embed .embed-container iframe {
+  width: 80%;
+  height: 56.25%;
+}
+.lunnar-embed .embed-container::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 46px;
+  height: 46px;
+  transform: rotate(45deg);
+  background-color: var(--color-white);
+  color: var(--color-indigo);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.lunnar-embed .embed-container.active {
+  display: flex !important;
+}
+.lunnar-embed .embed--image-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin: -2rem auto auto -2rem;
+  color: var(--color-indigo);
+  background-color: var(--color-white);
+  border-radius: 50%;
+  z-index: 10;
+  transition: 0.2s transform ease-in-out;
+}
+.lunnar-embed .embed--image-btn img,
+.lunnar-embed .embed--image-btn svg {
+  height: 1.5rem;
+  width: auto;
+}
+@media (min-width: 992px) {
+  .lunnar-embed .embed--image-btn {
+    width: 6rem;
+    height: 6rem;
+    margin: -3rem auto auto -3rem;
+  }
+  .lunnar-embed .embed--image-btn img,
+  .lunnar-embed .embed--image-btn svg {
+    height: 2rem;
+  }
+}
+.lunnar-embed:hover .embed--image-btn {
+  transform: scale(1.05);
+}
+.lunnar-embed .embed--btn-only {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.lunnar-embed .embed--btn-only a {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  color: var(--color-white) !important;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.lunnar-embed .embed--btn-only a img,
+.lunnar-embed .embed--btn-only a svg {
+  height: 1.5rem;
+  width: auto;
+}
+
+#fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+#fullscreen-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+#fullscreen-overlay .fullscreen-overlay--close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: #000;
+  cursor: pointer;
+}
+#fullscreen-overlay .video-container {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.container-16-9 {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.container-16-9 iframe,
+.container-16-9 embed,
+.container-16-9 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wp-admin .lunnar-embed {
+  position: relative !important;
+}
+.wp-admin .embed--image {
+  position: static;
+}
+.wp-admin .embed-container {
+  display: none !important;
+}/*# sourceMappingURL=block-video-embed.css.map */

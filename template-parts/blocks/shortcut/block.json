@@ -1,0 +1,13 @@
+{
+    "name": "acf/shortcut",
+    "title": "Sniðvegur",
+    "description": "Kassi við mynd og teksti, sum kann leiða til undirsíður",
+    "style": [ "file:../../../css/block-shortcut.min.css" ],
+    "category": "lunnar-blocks",
+    "icon": "admin-links",
+    "keywords": ["shortcut", "link", "image"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "shortcut.php"
+    }
+}

@@ -1,0 +1,206 @@
+@mixin input() {
+	border-radius: 0px !important;
+	background-color: var(--color-white);
+	color: var(--color-dark) !important;
+	position: relative;
+	padding: 1.5rem 2rem !important;
+	border: 1px solid #eee;
+	outline: none;
+	transition: 0.2s ease;
+	width: 100%;
+	height: auto !important;
+
+	&:focus {
+		border-color: var(--color-blue-100);
+	}
+
+	@media (min-width: 992px) {
+		font-size: 1.25rem !important;
+	}
+}
+
+.form-container {
+	input[type='text'],
+	input[type='number'],
+	input[type='email'],
+	input[type='tel'],
+	input[type='password'] {
+		@include input();
+	}
+
+	.nf-before-form-content,
+	.nf-after-form-content {
+		display: none;
+	}
+
+	textarea {
+		@include input();
+		height: 12rem !important;
+		padding: 2rem;
+		resize: none;
+	}
+
+	.nf-field-container {
+		margin-bottom: 1rem;
+	}
+
+	.nf-field-label {
+		margin-bottom: 1rem !important;
+		padding-left: 1rem !important;
+		label {
+			font-size: 1rem;
+			color: var(--color-dark);
+			opacity: 0.6;
+			font-weight: 400 !important;
+		}
+		@media (min-width: 992px) {
+			padding-left: 2rem !important;
+			label {
+				font-size: 1.25rem !important;
+			}
+		}
+	}
+
+	.nf-form-content {
+		padding: 0 !important;
+		margin: 0;
+		max-width: unset;
+
+		.nf-field-container:not(.hidden-container) {
+			margin-bottom: 2rem;
+		}
+
+		.nf-field-element {
+			input:not([type='button'], [type='file']),
+			textarea {
+				@include input;
+			}
+
+			textarea {
+				height: 12rem !important;
+				padding: 1rem;
+				resize: none;
+			}
+
+			&:after {
+				top: 50% !important;
+				transform: translateY(-50%) !important;
+			}
+		}
+
+		button,
+		input[type='button'],
+		input[type='submit'] {
+			background: var(--color-green) !important;
+			color: var(--color-white) !important;
+			height: auto !important;
+			padding-left: 1rem !important;
+			&:hover {
+				background: var(--color-green-600) !important;
+				color: var(--color-white) !important;
+			}
+		}
+
+		.nf-error.field-wrap .nf-field-element:after {
+			height: calc(3.5rem - 2px);
+		}
+	}
+
+	.nf-form-title {
+		h3 {
+			font-size: 2rem;
+		}
+	}
+
+	.nf-form-fields-required {
+		margin-bottom: 1rem !important;
+	}
+
+	.wp-block-group {
+		&.form-container {
+			.nf-form-content {
+				padding: 0 !important;
+			}
+		}
+	}
+
+	.submit-wrap {
+		.nf-field-element {
+			text-align: center;
+			position: relative;
+
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 1.5rem;
+				height: 1.125rem;
+				mask-image: url('../images/icon-arrow-large.svg');
+				mask-repeat: no-repeat;
+				background-color: var(--color-dark);
+				transition: ease transform 0.2s;
+				top: 2rem;
+				transform: translateY(-50%);
+				right: 1.5rem;
+				position: absolute;
+				background-color: var(--color-white);
+				pointer-events: none;
+			}
+
+			input {
+				@include button();
+				width: 100% !important;
+			}
+
+			@media (min-width: 768px) {
+				text-align: right;
+			}
+		}
+	}
+
+	.nf-error.field-wrap .nf-field-element:after {
+		display: none !important;
+	}
+
+	.ninja-forms-field {
+		border-width: 0 !important;
+	}
+
+	.nf-error .nf-field-element .ninja-forms-field {
+		border-color: var(--color-red) !important;
+		border-width: 0 0 1px 0 !important;
+	}
+
+	.nf-error-wrap.nf-error .nf-error-msg,
+	.nf-error-msg {
+		padding-top: 0.5rem;
+		padding-left: 2rem;
+		color: var(--color-red) !important;
+		font-size: 1rem;
+
+		@media (min-width: 768px) {
+			font-size: 1.25rem;
+		}
+	}
+
+	.ninja-forms-req-symbol {
+		display: none;
+	}
+
+	.nf-field {
+		ul {
+			li {
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.nf-form-hp {
+		display: none !important;
+	}
+
+	.hidden-wrap {
+		display: none !important;
+	}
+}

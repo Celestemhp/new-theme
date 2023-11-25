@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap");
+
+@import "variables";
+@import "globals";
+@import "cards";
+@import "block-override";
+@import "buttons";
+
+.wp-admin {
+    .edit-post-visual-editor {
+        // targets editor screen only and not sidebar etc.
+        @import "font";
+
+        * {
+            box-sizing: border-box;
+        }
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    p {
+        line-height: var(--line-height);
+    }
+
+    .wp-block-spacer {
+        background: rgba(var(--color-white-rgb), 0.1);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        border: 1px dashed rgba(var(--color-black-rgb), 0.25);
+
+        .block-library-spacer__resize-container {
+            margin: 0;
+        }
+    }
+
+    .block-notice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem 2rem;
+        flex-direction: column;
+
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        background: rgba(var(--color-white-rgb), 0.2);
+        border: 1px dashed rgba(var(--color-black-rgb), 0.5);
+
+        h3,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

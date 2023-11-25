@@ -1,0 +1,114 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1.5rem 0;
+
+    line-height: var(--heading-line-height);
+    font-weight: 500;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    color: var(--color-blue);
+    font-weight: 500;
+    &.has-small-font-size {
+        font-size: calc(var(--font-size-h1) / 1.15) !important;
+    }
+    &.has-normal-font-size {
+        font-size: var(--font-size-h1) !important;
+    }
+    &.has-large-font-size {
+        font-size: calc(var(--font-size-h1) * 1.15) !important;
+    }
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 200;
+    &.has-small-font-size {
+        font-size: calc(var(--font-size-h2) / 1.15) !important;
+    }
+    &.has-normal-font-size {
+        font-size: var(--font-size-h2) !important;
+    }
+    &.has-large-font-size {
+        font-size: calc(var(--font-size-h2) * 1.15) !important;
+    }
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 200;
+    &.has-small-font-size {
+        font-size: calc(var(--font-size-h3) / 1.25) !important;
+    }
+    &.has-normal-font-size {
+        font-size: var(--font-size-h3) !important;
+    }
+    &.has-large-font-size {
+        font-size: calc(var(--font-size-h3) * 1.25) !important;
+    }
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+    font-weight: 500;
+    &.has-small-font-size {
+        font-size: calc(var(--font-size-h4) / 1.16) !important;
+    }
+    &.has-normal-font-size {
+        font-size: var(--font-size-h4) !important;
+    }
+    &.has-large-font-size {
+        font-size: calc(var(--font-size-h4) * 1.16) !important;
+    }
+}
+
+h5,
+h6 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin: 1em 0;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-weight: 200;
+    &.has-small-font-size {
+        font-size: calc(var(--font-size) * 0.85) !important;
+    }
+    &.has-normal-font-size {
+        font-size: var(--font-size) !important;
+    }
+    &.has-large-font-size {
+        font-size: calc(var(--font-size) * 1.2) !important;
+    }
+}
+
+a {
+    color: var(--color-link);
+    font-weight: var(--font-weight-light);
+}
+
+small {
+    font-size: 0.875rem;
+    line-height: 1.3125;
+}
+
+b,
+strong {
+    font-weight: 600;
+}
+
+.text-shadow {
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}

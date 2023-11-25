@@ -1,0 +1,24 @@
+.main-404 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+
+    .btn-404 {
+        border-radius: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.5rem;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        background-color: var(--color-orange);
+        text-decoration: none;
+
+        p {
+            color: var(--color-white);
+            align-self: center;
+            font-weight: 400;
+        }
+    }
+}

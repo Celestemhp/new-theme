@@ -1,0 +1,62 @@
+.lunnar-shortcut {
+    display: flex;
+    width: 100%;
+
+    a {
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        position: relative;
+
+        .shortcut-image {
+            display: flex;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            transition: ease opacity 0.1s;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 10;
+            }
+
+            &:after {
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: var(--color-black);
+                opacity: 0.4;
+                z-index: 11;
+                position: absolute;
+            }
+        }
+
+        .shortcut-link {
+            display: flex;
+            width: 100%;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 3rem 2rem;
+            color: var(--color-white);
+            text-decoration: none;
+            z-index: 20;
+            font-size: 1.5rem;
+        }
+
+        &:hover {
+            .shortcut-image {
+                opacity: 0.85;
+            }
+        }
+    }
+}

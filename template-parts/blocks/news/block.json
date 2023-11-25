@@ -1,0 +1,14 @@
+{
+    "name": "acf/news",
+    "title": "Tíðindi",
+    "description": "",
+    "style": ["file:../../../css/block-news.min.css"],
+    "category": "lunnar-blocks",
+    "icon": "text-page",
+    "keywords": ["tíðindi", "news"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "news.php"
+    },
+    "align": ["wide"]
+}

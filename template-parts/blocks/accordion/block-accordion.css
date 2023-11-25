@@ -1,0 +1,51 @@
+.lunnar-accordion {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.lunnar-accordion .accordion-item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+.lunnar-accordion .accordion-item .accordion-item--title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1.1rem 1.5rem 1.1rem 2rem;
+  background-color: var(--color-black-200);
+  cursor: pointer;
+}
+.lunnar-accordion .accordion-item .accordion-item--title img,
+.lunnar-accordion .accordion-item .accordion-item--title svg {
+  transform: rotate(180deg);
+  height: 0.5rem;
+  width: auto;
+  transition: ease transform 0.2s;
+}
+.lunnar-accordion .accordion-item .accordion-item--content {
+  display: none;
+  width: 100%;
+  background-color: var(--color-black-100);
+  padding: 1.5rem 2rem;
+}
+.lunnar-accordion .accordion-item.is-active .accordion-item--title img,
+.lunnar-accordion .accordion-item.is-active .accordion-item--title svg {
+  transform: rotate(0deg);
+}
+.lunnar-accordion .accordion-item.is-active .accordion-item--content {
+  display: inline-block;
+}
+@media (min-width: 992px) {
+  .lunnar-accordion {
+    gap: 1.25rem;
+  }
+  .lunnar-accordion .accordion-item .accordion-item--title {
+    font-size: 1.25rem;
+    padding: 1.25rem 1.5rem 1.25rem 2rem;
+  }
+}/*# sourceMappingURL=block-accordion.css.map */

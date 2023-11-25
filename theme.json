@@ -1,0 +1,140 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "customTemplates": [],
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "name": "Black",
+                    "slug": "black",
+                    "color": "var(--color-dark-900)"
+                },
+                {
+                    "name": "White",
+                    "slug": "white",
+                    "color": "var(--color-dark-100)"
+                },
+                {
+                    "name": "Beige",
+                    "slug": "beige",
+                    "color": "var(--color-beige)"
+                },
+                {
+                    "name": "Rosa",
+                    "slug": "rosa",
+                    "color": "var(--color-rosa)"
+                },
+                {
+                    "name": "Orange",
+                    "slug": "orange",
+                    "color": "var(--color-orange)"
+                },
+                {
+                    "name": "Purple",
+                    "slug": "purple",
+                    "color": "var(--color-purple-500)"
+                },
+                {
+                    "name": "Dark purple",
+                    "slug": "dark purple",
+                    "color": "var(--color-purple-900)"
+                },
+                {
+                    "name": "Brown",
+                    "slug": "brown",
+                    "color": "var(--color-brown)"
+                },
+                {
+                    "name": "Blue",
+                    "slug": "blue",
+                    "color": "var(--color-blue)"
+                }
+            ]
+        },
+        "typography": {
+            "fontSizes": [
+                {
+                    "slug": "small",
+                    "size": "14px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "normal",
+                    "size": "var(--font-size)",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "large",
+                    "size": "18px",
+                    "name": "Large"
+                }
+            ],
+            "fontFamilies": [
+                {
+                    "fontFamily": "var(--font)",
+                    "slug": "font",
+                    "name": "Mulish"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "var(--container)",
+            "wideSize": "var(--container-wide)"
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "radius": false,
+                    "customRadius": false
+                }
+            }
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "var(--color-background)"
+        },
+        "elements": {
+            "link": {
+                "color": {
+                    "text": "var(--color-link)"
+                }
+            },
+            "h1": {
+                "typography": {
+                    "fontSize": "var(--font-size-h1)",
+                    "lineHeight": "var(--font-size-h1)",
+                    "fontFamily": "var(--font)"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "var(--font-size-h2)",
+                    "lineHeight": "var(--font-size-h2)",
+                    "fontFamily": "var(--font)"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontSize": "var(--font-size-h3)",
+                    "lineHeight": "var(--font-size-h3)",
+                    "fontFamily": "var(--font)"
+                }
+            },
+            "h4": {
+                "typography": {
+                    "fontSize": "var(--font-size-h4)",
+                    "lineHeight": "var(--font-size-h4)",
+                    "fontFamily": "var(--font)"
+                }
+            }
+        },
+        "typography": {
+            "fontSize": "var(--font-size)",
+            "lineHeight": "1.7",
+            "fontFamily": "var(--font)",
+            "fontWeight": "var(font-weight-light"
+        }
+    }
+}

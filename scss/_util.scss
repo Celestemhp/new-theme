@@ -1,0 +1,109 @@
+@each $name, $color in $colors {
+    .has-#{$name}-color {
+        color: var(--color-#{$name}) !important;
+    }
+
+    .has-#{$name}-background-color {
+        background-color: var(--color-#{$name}) !important;
+    }
+}
+
+.has-transparent-background-color {
+    background-color: transparent !important;
+}
+
+.img-16-9 {
+    display: block;
+    position: relative;
+    padding-bottom: calc(100% * 9 / 16);
+    background: #dadada;
+
+    img {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+}
+
+.img-16-10 {
+    @extend .img-16-9;
+    padding-bottom: calc(100% * 10 / 16);
+}
+
+.img-16-11 {
+    @extend .img-16-9;
+    padding-bottom: calc(100% * 11 / 16);
+}
+
+.img-1-1 {
+    @extend .img-16-9;
+    padding-bottom: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+body:not(.wp-admin) {
+    .hide-mobile {
+        display: none !important;
+
+        @media (min-width: 768px) {
+            display: block !important;
+        }
+    }
+
+    .hide-desktop {
+        @media (min-width: 768px) {
+            display: none !important;
+        }
+    }
+}
+
+.wp-admin {
+    .hide-mobile {
+        opacity: 0.25;
+
+        @media (min-width: 768px) {
+            opacity: 1;
+        }
+    }
+
+    .hide-desktop {
+        @media (min-width: 768px) {
+            opacity: 0.25;
+        }
+    }
+}
+
+// paddings
+
+// all devices
+@for $i from 1 through 100 {
+    .padding-#{$i} {
+        padding: #{$i}rem !important;
+    }
+}
+
+// desktop
+@for $i from 1 through 100 {
+    @media (min-width: 992px) {
+        .d-padding-#{$i} {
+            padding: #{$i}rem !important;
+        }
+    }
+}
+
+// mobile
+@for $i from 1 through 100 {
+    @media (max-width: 991px) {
+        .m-padding-#{$i} {
+            padding: #{$i}rem !important;
+        }
+    }
+}
