@@ -26,7 +26,6 @@ global $transparent_top;
             <div class="header-right">
                 <a href="#" class="btn-header btn-secondary right-link">
                     <p>Book nu</p>
-                    <?= svg('arrow_up'); ?>
                 </a>
 
                 <!-- mobile -->

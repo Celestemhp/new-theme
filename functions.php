@@ -23,6 +23,7 @@ function register_my_menus()
     register_nav_menus(array(
         'main-menu' => 'Main Menu',
         'footer-menu' => 'Footer Menu',
+        'footer-menu2' => 'Footer Menu2',
         'legal-menu' => 'Legal Menu',
     ));
 }

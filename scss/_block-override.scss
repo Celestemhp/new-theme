@@ -206,7 +206,7 @@
 .wp-block-image {
     img {
         height: 100%;
-        border-radius: 1.5rem;
+        // border-radius: 1.5rem;
     }
 }
 
@@ -458,4 +458,9 @@ body:not(.wp-admin) {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.gap-sm {
+    gap: 2.625rem;
+    background-color: aqua;
 }

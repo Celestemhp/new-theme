@@ -10,42 +10,45 @@ $address_info = get_field('address_info', 'option');
         <div class="footer-container alignwide">
 
             <div class="footer-cols">
-                <div class="footer-col">
+                <div class="footer-col footer-col-logo">
                     <div class="footer-logo">
                         <?= svg('logo-icon-white'); ?>
                     </div>
-                    <p><?= $address_info ?></p>
+                    <h4>Farum Gospel Choir</h4>
                 </div>
 
                 <div class="footer-col footer-col--nav">
-                    <p></p>
-                    <?php wp_nav_menu(array(
-                        'theme_location' => 'main-menu',
-                        'container' => '',
-                        'depth' => 1,
-                    )); ?>
-
-                    <a href="https://www.mammuhjalpin.fo/" target="_blank" class="link-decoration">
-                        Intranet
-                        <?= svg('arrow_up'); ?>
-                    </a>
-
-                    <div class="hide-mobile">
-                        <?php get_template_part('template-parts/elements/social-links'); ?>
+                    <div>
+                        <p class="footer-text--bold">om</p>
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'footer-menu',
+                            'container' => '',
+                            'depth' => 1,
+                        )); ?>
                     </div>
+                    <div>
+                        <p class="footer-text--bold">mere</p>
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'footer-menu2',
+                            'container' => '',
+                            'depth' => 1,
+                        )); ?>
+                        <a href="https://www.mammuhjalpin.fo/" target="_blank" class="link-decoration">
+                            Intranet
+                            <?= svg('arrow_up'); ?>
+                        </a>
+                    </div>
+                    <div class="footer-col informations">
+                        <p class="footer-text--bold">Farum Gospel Choir</p>
 
-                </div>
+                        <p><?= $address_info ?></p>
 
-                <div class="footer-col footer-col--nav materials">
-                    <p class="footer-text--bold">Tilfar</p>
-                    <?php wp_nav_menu(array(
-                        'theme_location' => 'footer-menu',
-                        'container' => '',
-                        'depth' => 1,
-                    )); ?>
-
-                    <div class="hide-desktop">
-                        <?php get_template_part('template-parts/elements/social-links'); ?>
+                        <div class="hide-desktop">
+                            <?php get_template_part('template-parts/elements/social-links'); ?>
+                        </div>
+                        <div class="hide-mobile">
+                            <?php get_template_part('template-parts/elements/social-links'); ?>
+                        </div>
                     </div>
                 </div>
 

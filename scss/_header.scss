@@ -119,14 +119,14 @@
         }
     }
     .btn-primary {
-        background-color: var(--color-purple);
+        background-color: var(--color-purple-500);
     }
 
     .btn-secondary {
-        background-color: var(--color-purple);
+        background-color: var(--color-purple-500);
 
         &:hover {
-            background-color: var(--color-mint-600);
+            background-color: var(--color-purple-600);
         }
     }
 

@@ -9,7 +9,7 @@
         <div class="menu-content">
 
             <a href="<?= home_url(); ?>">
-                <h3>Forsíða</h3>
+                <h3>Forsíde</h3>
             </a>
 
             <?php wp_nav_menu(array(
@@ -19,7 +19,7 @@
             )); ?>
 
             <a href="https://www.mammuhjalpin.fo/" target="_blank" class="menu-link-container">
-                <h3 class="menu-link">Mammuhjálpin</h3>
+                <h3 class="menu-link">Book nu</h3>
                 <?= svg('arrow_up'); ?>
             </a>
 
@@ -31,9 +31,6 @@
                     </a>
                     <a href="https://www.instagram.com/fyrilivi/" target="_blank">
                         <?= svg('icon-instagram'); ?>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCCYe59QXf8awAfpnouCXXNg" target="_blank">
-                        <?= svg('icon-youtube'); ?>
                     </a>
                 </div>
             </div>

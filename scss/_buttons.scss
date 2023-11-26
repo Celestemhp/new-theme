@@ -4,7 +4,7 @@
     padding: 0.75rem 2rem;
     height: 3.25rem;
     color: var(--color-white);
-    background-color: var(--color-orange);
+    background-color: var(--color-purple-500);
     // border: 1px solid;
     font-size: 1rem;
     line-height: var(--line-height);
@@ -66,7 +66,7 @@
 
     &.is-style-outline {
         .wp-block-button__link {
-            color: var(--color-orange);
+            color: var(--color-purple-500);
             box-sizing: border-box;
 
             @each $name, $color in $colors {
