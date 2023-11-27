@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "node-sass scss/style.scss css/style.min.css --watch"
+        "dev": "node-sass scss/style.scss css/style.min.css --watch",
+        "dev:editor": "node-sass scss/editor.scss css/editor.min.css --watch"
     },
     "repository": {
         "type": "git",

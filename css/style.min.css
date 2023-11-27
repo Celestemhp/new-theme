@@ -184,6 +184,10 @@ table {
     Get contrasting color
 */
 :root {
+  --color-purple: #9c5bff;
+  --color-purple-rgb: 156, 91, 255;
+  --color-purple: #9c5bff;
+  --color-purple-contrast: var(--color-white);
   --color-purple-500: #9c5bff;
   --color-purple-500-rgb: 156, 91, 255;
   --color-purple-500: #9c5bff;
@@ -434,6 +438,12 @@ strong {
 
 .text-shadow {
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5); }
+
+.has-purple-color {
+  color: var(--color-purple) !important; }
+
+.has-purple-background-color {
+  background-color: var(--color-purple) !important; }
 
 .has-purple-500-color {
   color: var(--color-purple-500) !important; }
@@ -2084,11 +2094,18 @@ body:not(.wp-admin).alignfull .alignwide {
   gap: 2.625rem;
   background-color: aqua; }
 
+.gap-md {
+  gap: 4.5rem; }
+  @media (min-width: 768px) {
+    .gap-md {
+      gap: 0rem; } }
+
 #header {
   width: 100%;
   background-color: var(--color-background);
   z-index: 100;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
   #header .menu-wrapper {
     display: flex;
     width: 100%;
@@ -2098,17 +2115,24 @@ body:not(.wp-admin).alignfull .alignwide {
     justify-content: space-between; }
     @media (min-width: 992px) {
       #header .menu-wrapper {
-        padding: 0.5 1.25rem; } }
+        padding: 0.5rem 1.25rem; } }
     #header .menu-wrapper .header-left {
       display: flex;
       align-items: center;
-      flex-direction: row; }
+      flex-direction: row;
+      gap: 1.8rem; }
+      #header .menu-wrapper .header-left .logo {
+        width: 3rem; }
+      #header .menu-wrapper .header-left p {
+        margin: 0rem; }
+    #header .menu-wrapper .header-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
       @media (min-width: 992px) {
-        #header .menu-wrapper .header-left {
+        #header .menu-wrapper .header-right {
           gap: 1.8rem; } }
-      #header .menu-wrapper .header-left .logo-transparent {
-        display: none; }
-      #header .menu-wrapper .header-left ul.menu {
+      #header .menu-wrapper .header-right ul.menu {
         display: none;
         margin: 0;
         padding: 0;
@@ -2116,18 +2140,18 @@ body:not(.wp-admin).alignfull .alignwide {
         flex-direction: row;
         gap: 1.5rem;
         align-items: center; }
-        #header .menu-wrapper .header-left ul.menu li {
+        #header .menu-wrapper .header-right ul.menu li {
           margin: 0;
           padding: 0; }
-          #header .menu-wrapper .header-left ul.menu li a {
+          #header .menu-wrapper .header-right ul.menu li a {
             text-decoration: none;
             font-weight: 200;
             padding: 0.75rem 1rem;
             transition: ease color 0.2s;
             color: var(--color-black); }
-            #header .menu-wrapper .header-left ul.menu li a:hover {
-              color: var(--color-orange-600); }
-          #header .menu-wrapper .header-left ul.menu li.is-button a {
+            #header .menu-wrapper .header-right ul.menu li a:hover {
+              color: var(--color-purple-600); }
+          #header .menu-wrapper .header-right ul.menu li.is-button a {
             border-radius: 1.8rem;
             display: flex;
             justify-content: center;
@@ -2137,17 +2161,14 @@ body:not(.wp-admin).alignfull .alignwide {
             gap: 4px;
             width: fit-content;
             padding: 0.5rem 1rem;
-            background-color: var(--color-orange);
+            background-color: var(--color-purple-500);
             color: var(--color-white);
             transition: ease background-color 0.2s; }
-            #header .menu-wrapper .header-left ul.menu li.is-button a:hover {
-              background-color: var(--color-orange-600); }
+            #header .menu-wrapper .header-right ul.menu li.is-button a:hover {
+              background-color: var(--color-purple-600); }
         @media (min-width: 992px) {
-          #header .menu-wrapper .header-left ul.menu {
+          #header .menu-wrapper .header-right ul.menu {
             display: flex; } }
-    #header .menu-wrapper .header-right {
-      display: flex;
-      flex-direction: row; }
       #header .menu-wrapper .header-right .right-link {
         display: none;
         text-decoration: none; }
@@ -2156,6 +2177,8 @@ body:not(.wp-admin).alignfull .alignwide {
             display: flex; } }
   #header.is-fixed {
     position: fixed; }
+  #header.is-hidden {
+    transform: translateY(-100%); }
   #header .btn-header {
     border-radius: 1.8rem;
     display: flex;
@@ -2165,15 +2188,17 @@ body:not(.wp-admin).alignfull .alignwide {
     flex-direction: row;
     gap: 4px;
     width: fit-content;
-    padding: 0.5rem 1rem; }
+    padding: 1.2rem; }
     #header .btn-header p {
       color: var(--color-white);
       align-self: center;
-      font-weight: 400; }
+      font-weight: 500;
+      text-transform: uppercase; }
   #header .btn-primary {
     background-color: var(--color-purple-500); }
   #header .btn-secondary {
-    background-color: var(--color-purple-500); }
+    background-color: var(--color-purple-500);
+    transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
     #header .btn-secondary:hover {
       background-color: var(--color-purple-600); }
   #header.has-transparent-top {
@@ -2181,7 +2206,8 @@ body:not(.wp-admin).alignfull .alignwide {
     background-color: transparent;
     color: var(--color-white); }
     #header.has-transparent-top .menu-wrapper .logo-std {
-      display: none; }
+      display: none;
+      color: var(--color-purple-900) !important; }
     #header.has-transparent-top .menu-wrapper .logo-transparent {
       display: flex; }
     #header.has-transparent-top .menu-wrapper .header-left ul.menu li a {
@@ -2200,7 +2226,7 @@ body:not(.wp-admin).alignfull .alignwide {
   opacity: 0.5; }
 
 .mobile-menu {
-  background-color: var(--color-orange);
+  background-color: var(--color-purple-500);
   border-radius: 1.8rem;
   width: 44px;
   height: 44px;
@@ -2440,7 +2466,6 @@ svg {
     background: var(--color-dark); }
 
 #footer {
-  margin-top: 3.75rem;
   width: 100%;
   z-index: 100;
   background-color: var(--color-purple-900);
@@ -2595,12 +2620,14 @@ svg {
   #lunnar-menu a {
     text-decoration: none; }
   #lunnar-menu h3 {
-    color: var(--color-white);
     font-size: 1.67rem;
     padding-left: 0.7rem;
     padding-bottom: 1rem;
     text-decoration: none;
-    margin: 0; }
+    margin: 0;
+    color: var(--color-dark-500); }
+    #lunnar-menu h3:hover {
+      text-decoration: underline; }
   #lunnar-menu .lunnar-menu--top {
     position: fixed;
     width: 100%;
@@ -2609,8 +2636,19 @@ svg {
     padding: 0.375rem 1.25rem;
     top: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center; }
+    #lunnar-menu .lunnar-menu--top .top-menu--left {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 1.8rem; }
+      #lunnar-menu .lunnar-menu--top .top-menu--left .logo {
+        width: 3rem; }
+        #lunnar-menu .lunnar-menu--top .top-menu--left .logo svg {
+          color: #800080; }
+      #lunnar-menu .lunnar-menu--top .top-menu--left p {
+        margin: 0rem; }
     #lunnar-menu .lunnar-menu--top .lunnar-menu--close {
       width: 2.75rem;
       height: 2.75rem;
@@ -2618,13 +2656,13 @@ svg {
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      background-color: var(--color-orange);
+      background-color: var(--color-purple-500);
       border-radius: 30px; }
   #lunnar-menu .menu-content-scroller {
     display: flex;
     width: 100%;
     overflow-y: auto;
-    background-color: var(--color-mint); }
+    background-color: var(--color-background); }
   #lunnar-menu .menu-content {
     display: flex;
     flex-direction: column;
@@ -2648,9 +2686,30 @@ svg {
           font-size: 1.67rem;
           padding: 0.5rem;
           text-decoration: none;
-          color: var(--color-white); }
+          color: var(--color-dark-500); }
           #lunnar-menu .menu-content ul li a:hover {
             text-decoration: underline; }
+    #lunnar-menu .menu-content .btn-header {
+      background-color: var(--color-purple-500);
+      border-radius: 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 34px;
+      flex-direction: row;
+      gap: 4px;
+      width: fit-content;
+      padding: 1.5rem 1.5rem;
+      margin-top: 1rem;
+      margin-inline: 0.5rem;
+      transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
+      #lunnar-menu .menu-content .btn-header p {
+        color: var(--color-white);
+        align-self: center;
+        font-weight: 500;
+        text-transform: uppercase; }
+      #lunnar-menu .menu-content .btn-header:hover {
+        background-color: var(--color-purple-600); }
     #lunnar-menu .menu-content .menu-link-container {
       display: flex;
       flex-direction: row;
@@ -2681,7 +2740,7 @@ svg {
         #lunnar-menu .menu-content .social-links-container .menu-social-links svg {
           height: 2rem;
           width: auto;
-          color: var(--color-dark-blue); }
+          fill: var(--color-dark-500); }
 
 .btn {
   display: flex;
@@ -2706,6 +2765,13 @@ svg {
     opacity: 0.33; }
   .btn.is-small {
     padding: 0.45rem 1.5rem !important; }
+  .btn.has-purple-color {
+    color: var(--color-purple);
+    border-color: var(--color-purple); }
+  .btn.has-purple-background-color {
+    color: var(--color-purple-contrast);
+    border-color: var(--color-purple);
+    background-color: var(--color-purple); }
   .btn.has-purple-500-color {
     color: var(--color-purple-500);
     border-color: var(--color-purple-500); }
@@ -2974,6 +3040,13 @@ svg {
     opacity: 0.33; }
   .wp-block-button .wp-block-button__link.is-small {
     padding: 0.45rem 1.5rem !important; }
+  .wp-block-button .wp-block-button__link.has-purple-color {
+    color: var(--color-purple);
+    border-color: var(--color-purple); }
+  .wp-block-button .wp-block-button__link.has-purple-background-color {
+    color: var(--color-purple-contrast);
+    border-color: var(--color-purple);
+    background-color: var(--color-purple); }
   .wp-block-button .wp-block-button__link.has-purple-500-color {
     color: var(--color-purple-500);
     border-color: var(--color-purple-500); }
@@ -3216,6 +3289,8 @@ svg {
 .wp-block-button.is-style-outline .wp-block-button__link {
   color: var(--color-purple-500);
   box-sizing: border-box; }
+  .wp-block-button.is-style-outline .wp-block-button__link.has-purple-color {
+    color: var(--color-purple) !important; }
   .wp-block-button.is-style-outline .wp-block-button__link.has-purple-500-color {
     color: var(--color-purple-500) !important; }
   .wp-block-button.is-style-outline .wp-block-button__link.has-purple-600-color {
@@ -3308,6 +3383,13 @@ svg {
     opacity: 0.33; }
   .wp-block-file a.wp-block-file__button.is-small {
     padding: 0.45rem 1.5rem !important; }
+  .wp-block-file a.wp-block-file__button.has-purple-color {
+    color: var(--color-purple);
+    border-color: var(--color-purple); }
+  .wp-block-file a.wp-block-file__button.has-purple-background-color {
+    color: var(--color-purple-contrast);
+    border-color: var(--color-purple);
+    background-color: var(--color-purple); }
   .wp-block-file a.wp-block-file__button.has-purple-500-color {
     color: var(--color-purple-500);
     border-color: var(--color-purple-500); }
@@ -3734,6 +3816,13 @@ svg {
       opacity: 0.33; }
     .form-container .submit-wrap .nf-field-element input.is-small {
       padding: 0.45rem 1.5rem !important; }
+    .form-container .submit-wrap .nf-field-element input.has-purple-color {
+      color: var(--color-purple);
+      border-color: var(--color-purple); }
+    .form-container .submit-wrap .nf-field-element input.has-purple-background-color {
+      color: var(--color-purple-contrast);
+      border-color: var(--color-purple);
+      background-color: var(--color-purple); }
     .form-container .submit-wrap .nf-field-element input.has-purple-500-color {
       color: var(--color-purple-500);
       border-color: var(--color-purple-500); }
@@ -4170,6 +4259,153 @@ svg {
     transform: translate(0, 0); }
   100% {
     transform: translate(24px, 0); } }
+
+.lunnar-events {
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  .lunnar-events .events {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    @media (min-width: 992px) {
+      .lunnar-events .events {
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding); } }
+    .lunnar-events .events .event-item {
+      width: 100%;
+      height: fit-content;
+      text-decoration: none;
+      border-radius: var(--border-radius-xs);
+      transition: 0.35s opacity ease, 0.2s color ease;
+      cursor: pointer; }
+      .lunnar-events .events .event-item:hover {
+        opacity: 0.45; }
+      .lunnar-events .events .event-item .event-container {
+        width: 100%;
+        transition: 0.2s opacity ease;
+        font-size: 0.8125rem;
+        font-weight: 800;
+        display: flex;
+        flex-direction: row;
+        padding: 0.625rem;
+        padding-right: 0.9rem;
+        gap: 0.625rem;
+        border-radius: var(--border-radius-xs);
+        border-bottom: solid 0.1rem var(--color-dark-400); }
+        .lunnar-events .events .event-item .event-container .event-container--date {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 4.313rem;
+          height: 4.313rem;
+          flex-shrink: 0; }
+          .lunnar-events .events .event-item .event-container .event-container--date .post-date {
+            max-width: 3rem;
+            text-align: center;
+            margin: 0; }
+        .lunnar-events .events .event-item .event-container .event-card--left {
+          display: flex;
+          flex-direction: column;
+          width: 100%; }
+          .lunnar-events .events .event-item .event-container .event-card--left h3 {
+            font-size: 16px;
+            margin-block: auto; }
+          .lunnar-events .events .event-item .event-container .event-card--left p {
+            line-height: normal;
+            margin-block: auto;
+            font-size: 1rem; }
+
+.wp-admin .lunnar-events .event-container {
+  border-radius: var(--border-radius-xs);
+  border: solid 0.1rem var(--color-dark-400); }
+
+#tribe-events-pg-template {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important; }
+  #tribe-events-pg-template .post-page--event {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    padding-bottom: 6.25rem; }
+    #tribe-events-pg-template .post-page--event .event-back {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      align-items: center;
+      width: fit-content; }
+      #tribe-events-pg-template .post-page--event .event-back svg {
+        display: block;
+        text-align: center;
+        height: 2rem; }
+    #tribe-events-pg-template .post-page--event .post-event--content {
+      max-width: var(--container);
+      padding: 0 var(--container-padding);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: auto;
+      align-self: auto; }
+      @media (min-width: 768px) {
+        #tribe-events-pg-template .post-page--event .post-event--content {
+          min-width: 40rem;
+          align-self: center; } }
+      #tribe-events-pg-template .post-page--event .post-event--content .tribe-events-event-image {
+        width: 100%;
+        margin-bottom: 0;
+        height: 20rem; }
+        #tribe-events-pg-template .post-page--event .post-event--content .tribe-events-event-image img {
+          width: 100% !important;
+          height: 100%; }
+      #tribe-events-pg-template .post-page--event .post-event--content .single-event--content {
+        display: flex;
+        flex-direction: column;
+        padding-top: 6rem; }
+        #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .single-event--description {
+          text-align: left;
+          padding-bottom: 3rem; }
+        #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding: 2rem;
+          background: var(--color-dark-500);
+          border-radius: var(--border-radius-xs);
+          border: 1; }
+          #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info .info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: space-between;
+            gap: 1rem; }
+            @media (min-width: 768px) {
+              #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info .info-container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2rem; } }
+          #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info .location-container,
+          #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info .date-container,
+          #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info .time-container,
+          #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info .categories-container,
+          #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .info .price-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem; }
+        #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .map-container {
+          width: 100%;
+          padding-top: 5rem; }
+          #tribe-events-pg-template .post-page--event .post-event--content .single-event--content .map-container iframe {
+            width: 100%; }
 
 html {
   overflow-x: hidden;

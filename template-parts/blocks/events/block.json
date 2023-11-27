@@ -1,0 +1,14 @@
+{
+    "name": "acf/events",
+    "title": "Events",
+    "description": "Ikki sjónligt á smærri skermum",
+    "style": ["file:../../../css/block-events.min.css"],
+    "category": "lunnar-blocks",
+    "icon": "calendar-alt",
+    "keywords": ["events"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "events.php"
+    },
+    "align": "wide"
+}

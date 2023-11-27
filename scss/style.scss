@@ -19,6 +19,8 @@
 @import "cards";
 @import "loader";
 
+@import "template-parts/blocks/events/block-events";
+
 html {
     overflow-x: hidden;
     background: var(--color-background);

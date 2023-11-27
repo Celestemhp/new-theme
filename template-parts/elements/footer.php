@@ -11,9 +11,9 @@ $address_info = get_field('address_info', 'option');
 
             <div class="footer-cols">
                 <div class="footer-col footer-col-logo">
-                    <div class="footer-logo">
+                    <a href="<?= home_url(); ?>" class="footer-logo">
                         <?= svg('logo-icon-white'); ?>
-                    </div>
+                    </a>
                     <h4>Farum Gospel Choir</h4>
                 </div>
 

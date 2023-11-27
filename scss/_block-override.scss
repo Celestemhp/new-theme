@@ -464,3 +464,10 @@ body:not(.wp-admin) {
     gap: 2.625rem;
     background-color: aqua;
 }
+.gap-md {
+    gap: 4.5rem;
+
+    @media (min-width: 768px) {
+        gap: 0rem;
+    }
+}

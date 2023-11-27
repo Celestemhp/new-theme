@@ -36,6 +36,9 @@ if (function_exists('acf_register_block_type')) {
         register_block_type(__DIR__ . "/../template-parts/blocks/$blockName");
         wp_register_script("block-$blockName", get_template_directory_uri() . "/template-parts/blocks/$blockName/$blockName.js", null, false, true);
 
+        $blockName = "events";
+        register_block_type(__DIR__ . "/../template-parts/blocks/$blockName");
+
         $blockName = "news";
         register_block_type(__DIR__ . "/../template-parts/blocks/$blockName");
     });

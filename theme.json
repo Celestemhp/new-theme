@@ -26,14 +26,9 @@
                     "color": "var(--color-rosa)"
                 },
                 {
-                    "name": "Orange",
-                    "slug": "orange",
-                    "color": "var(--color-orange)"
-                },
-                {
                     "name": "Purple",
                     "slug": "purple",
-                    "color": "var(--color-purple-500)"
+                    "color": "var(--color-purple)"
                 },
                 {
                     "name": "Dark purple",
