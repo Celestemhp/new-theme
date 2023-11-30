@@ -95,11 +95,11 @@ function convert_date($format, $time = null)
     else {
         global $fo_locale_string;
         $fo_locale_string = array(
-            "weekday" => array("Sunnudagur", "Mánadagur", "Týsdagur", "Mikudagur", "Hósdagur", "Fríggjadagur", "Leygardagur"),
-            "weekday_initial" => array("M", "T", "M", "H", "F", "L", "S"),
-            "weekday_abbrev" => array("Sun", "Mán", "Týs", "Mik", "Hós", "Frí", "Ley"),
-            "month" => array("januar", "februar", "mars", "apríl", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"),
-            "month_abbrev" => array("jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sept", "okt", "nov", "des")
+            "weekday" => array("Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"),
+            "weekday_initial" => array("M", "T", "O", "T", "F", "L", "S"),
+            "weekday_abbrev" => array("Søn", "Man", "Tirs", "Ons", "Tors", "Fre", "Lør"),
+            "month" => array("januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"),
+            "month_abbrev" => array("jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec")
         );
 
         $format = str_replace("%a", $fo_locale_string["weekday_abbrev"][strftime("%w", $time)], $format);  //day abbreviation
@@ -110,7 +110,7 @@ function convert_date($format, $time = null)
     }
 }
 
-function get_formatted_date($post_date, $short = true, $lang = 'fo')
+function get_formatted_date($post_date, $short = true, $lang = 'da')
 {
     $date = new DateTime($post_date);
 

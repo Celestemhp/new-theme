@@ -3,7 +3,7 @@
     background-color: var(--color-background);
     z-index: 100;
     overflow: hidden;
-    transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
     .menu-wrapper {
         display: flex;
@@ -22,12 +22,14 @@
             align-items: center;
             flex-direction: row;
             gap: 1.8rem;
+            text-decoration: none;
 
             .logo {
                 width: 3rem;
             }
             p {
                 margin: 0rem;
+                color: var(--color-white);
             }
             // .logo-transparent {
             //     display: none;
@@ -107,7 +109,14 @@
     }
 
     &.is-fixed {
-        position: fixed;
+        position: fixed !important;
+        background-color: var(--color-background) !important;
+        color: var(--dark-900) !important;
+
+        a,
+        p {
+            color: var(--dark-900) !important;
+        }
     }
 
     &.is-hidden {

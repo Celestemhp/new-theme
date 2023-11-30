@@ -69,7 +69,7 @@
                 {
                     "fontFamily": "var(--font)",
                     "slug": "font",
-                    "name": "Mulish"
+                    "name": "Montserrat"
                 }
             ]
         },
@@ -80,8 +80,7 @@
         "blocks": {
             "core/button": {
                 "border": {
-                    "radius": false,
-                    "customRadius": false
+                    "radius": false
                 }
             }
         }
@@ -129,7 +128,7 @@
             "fontSize": "var(--font-size)",
             "lineHeight": "1.7",
             "fontFamily": "var(--font)",
-            "fontWeight": "var(font-weight-light"
+            "fontWeight": "var(font-weight-light)"
         }
     }
 }

@@ -15,8 +15,8 @@ $event_categories = get_the_terms($event_id, 'tribe_events_cat');
             <h4 class="post-date"><?= $start_date ?></h4>
         </div>
 
-        <div class="event-card--left">
-            <h3><?php the_title(); ?></h3>
+        <div class="event-card--right">
+            <h4><?php the_title(); ?></h4>
             <div>
                 <p><?= $venue_name ?> kl. <?= $start_time ?></p>
             </div>

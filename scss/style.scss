@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
 
 @import "normalize";
 @import "variables";
@@ -234,8 +234,20 @@ a {
     }
 }
 
+.margin-sm {
+    @media (min-width: 768px) {
+        padding-inline: 2rem;
+    }
+}
+
 .padding-regular {
     @media (min-width: 768px) {
         padding-inline: 11rem;
+    }
+}
+// sponsors
+.sponsor-padding {
+    @media (min-width: 768px) {
+        padding-inline: 11.375rem;
     }
 }

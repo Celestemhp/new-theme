@@ -14,18 +14,19 @@ if (is_single() && $has_large_image) {
 
         <div class="menu-wrapper">
 
-            <div class="header-left">
 
-                <a href="<?= home_url(); ?>" class="top-logo">
-                    <div class="logo logo-std"><?= svg('logo-icon-purple'); ?></div>
-                    <div class="logo logo-transparent"><?= svg('logo-icon-purple'); ?></div>
-                </a>
+
+
+            <a href="<?= home_url(); ?>" class="header-left top-logo">
+                <div class="logo logo-std"><?= svg('logo-icon-purple'); ?></div>
+                <div class="logo logo-transparent"><?= svg('logo-icon-purple'); ?></div>
                 <p>Farum Gospel Choir</p>
+            </a>
 
 
 
 
-            </div>
+
 
             <div class="header-right">
 

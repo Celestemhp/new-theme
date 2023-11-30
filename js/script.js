@@ -60,10 +60,15 @@ window.addEventListener("DOMContentLoaded", () => {
         if (lastY > window.scrollY) {
             // when scrolling up
             header.classList.remove("is-hidden");
+
+            // when scrolling down first 5px
+            if (window.scrollY > 5) {
+                header.classList.add("is-fixed");
+            }
         } else {
             // when scrolling down
             header.classList.add("is-hidden");
-            header.classList.add("is-fixed");
+            header.classList.remove("is-fixed");
         }
 
         if (transparentOnInit) {
