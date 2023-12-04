@@ -174,7 +174,7 @@ function lunnar_search_serialize(WP_Post $post)
 
         $image = [];
 
-        if($img) {
+        if ($img) {
             $image = [
                 'url' => $img[0],
                 'focal_point' => get_focal_points(get_field('image', $post->ID))

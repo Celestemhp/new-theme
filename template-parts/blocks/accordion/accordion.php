@@ -23,7 +23,7 @@ $accordion = get_field('accordion');
     <?php if (is_admin() && !$accordion) : ?>
         <div class="block-notice">
             <h3>Accordion / OSS</h3>
-            <p><?php _e('Blokkurin er tómur. Vinarliga legg tilfar til.', 'lunnar'); ?></p>
+            <p><?php _e('Blokken er tom'); ?></p>
         </div>
     <?php endif; ?>
 

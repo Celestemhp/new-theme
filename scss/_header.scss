@@ -31,9 +31,9 @@
                 margin: 0rem;
                 color: var(--color-white);
             }
-            // .logo-transparent {
-            //     display: none;
-            // }
+            .logo-transparent {
+                display: none;
+            }
         }
 
         .header-right {
@@ -113,7 +113,7 @@
         background-color: var(--color-background) !important;
         color: var(--dark-900) !important;
 
-        a,
+        svg,
         p {
             color: var(--dark-900) !important;
         }
@@ -135,7 +135,7 @@
         padding: 1.2rem;
 
         p {
-            color: var(--color-white);
+            color: var(--color-white) !important;
             align-self: center;
             font-weight: 500;
             text-transform: uppercase;
@@ -161,11 +161,10 @@
 
         .menu-wrapper {
             .logo-std {
-                display: none;
-                color: var(--color-purple-900) !important;
+                color: var(--color-purple-500); // Set color for logo-std
             }
             .logo-transparent {
-                display: flex;
+                color: var(--color-white); // Set color for logo-transparent
             }
 
             .header-left ul.menu {

@@ -25,8 +25,6 @@ if (is_page()) {
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
 
-    <!-- Designed and developed by Lunnar sp/f (lunnar.fo) -->
-
     <title><?php wp_title('|', true, 'right'); ?></title>
 
     <meta charset="UTF-8">

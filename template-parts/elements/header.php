@@ -7,26 +7,16 @@ if (is_single() && $has_large_image) {
 }
 ?>
 
-<div id="header" class="<?php if ($transparent_top) {
-                            echo "has-transparent-top";
-                        } ?>">
+<div id="header" class="<?php echo $transparent_top ? 'has-transparent-top' : ''; ?>">
     <div class="header-content">
 
         <div class="menu-wrapper">
 
-
-
-
             <a href="<?= home_url(); ?>" class="header-left top-logo">
                 <div class="logo logo-std"><?= svg('logo-icon-purple'); ?></div>
-                <div class="logo logo-transparent"><?= svg('logo-icon-purple'); ?></div>
+                <div class="logo logo-transparent"><?= svg('logo-icon-purpe'); ?></div>
                 <p>Farum Gospel Choir</p>
             </a>
-
-
-
-
-
 
             <div class="header-right">
 

@@ -2,7 +2,7 @@
     "name": "acf/video-embed",
     "title": "Filmsbrot (embed)",
     "description": "YouTube ella Vimeo",
-    "style": [ "file:../../../css/block-video-embed.min.css" ],
+    "style": ["file:../../../css/block-video-embed.min.css"],
     "script": "block-video-embed",
     "category": "lunnar-blocks",
     "icon": "admin-comments",

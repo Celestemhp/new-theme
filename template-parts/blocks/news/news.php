@@ -58,7 +58,7 @@ global $post;
 <div id="<?= $id; ?>" class="<?= $className; ?>">
 
     <?php if (is_admin() && !$posts) : ?>
-        <div class="block-notice"><?php _e('Blokkurin er tómur. Vinarliga legg tilfar til.', 'lunnar'); ?></div>
+        <div class="block-notice"><?php _e('Blokken er tom'); ?></div>
     <?php endif; ?>
 
     <?php if ($posts) : ?>

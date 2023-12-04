@@ -4,8 +4,7 @@
   box-sizing: border-box; }
 
 html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%; }
+  line-height: 1.15; }
 
 body {
   margin: 0; }
@@ -82,22 +81,22 @@ select {
   text-transform: none; }
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button; }
 
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0; }
 
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText; }
 
 fieldset {
@@ -117,20 +116,20 @@ progress {
 textarea {
   overflow: auto; }
 
-[type='checkbox'],
-[type='radio'] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   padding: 0; }
 
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px; }
 
-[type='search']::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 ::-webkit-file-upload-button {
@@ -369,8 +368,7 @@ h6 {
 
 h1 {
   font-size: var(--font-size-h1);
-  color: var(--color-blue);
-  font-weight: 500; }
+  color: var(--color-blue); }
   h1.has-small-font-size {
     font-size: calc(var(--font-size-h1) / 1.15) !important; }
   h1.has-normal-font-size {
@@ -2127,6 +2125,8 @@ body:not(.wp-admin).alignfull .alignwide {
       #header .menu-wrapper .header-left p {
         margin: 0rem;
         color: var(--color-white); }
+      #header .menu-wrapper .header-left .logo-transparent {
+        display: none; }
     #header .menu-wrapper .header-right {
       display: flex;
       flex-direction: row;
@@ -2181,7 +2181,7 @@ body:not(.wp-admin).alignfull .alignwide {
     position: fixed !important;
     background-color: var(--color-background) !important;
     color: var(--dark-900) !important; }
-    #header.is-fixed a,
+    #header.is-fixed svg,
     #header.is-fixed p {
       color: var(--dark-900) !important; }
   #header.is-hidden {
@@ -2197,7 +2197,7 @@ body:not(.wp-admin).alignfull .alignwide {
     width: fit-content;
     padding: 1.2rem; }
     #header .btn-header p {
-      color: var(--color-white);
+      color: var(--color-white) !important;
       align-self: center;
       font-weight: 500;
       text-transform: uppercase; }
@@ -2213,10 +2213,9 @@ body:not(.wp-admin).alignfull .alignwide {
     background-color: transparent;
     color: var(--color-white); }
     #header.has-transparent-top .menu-wrapper .logo-std {
-      display: none;
-      color: var(--color-purple-900) !important; }
+      color: var(--color-purple-500); }
     #header.has-transparent-top .menu-wrapper .logo-transparent {
-      display: flex; }
+      color: var(--color-white); }
     #header.has-transparent-top .menu-wrapper .header-left ul.menu li a {
       color: var(--color-white);
       transition: ease opacity 0.2s; }
