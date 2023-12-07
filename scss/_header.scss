@@ -31,9 +31,6 @@
                 margin: 0rem;
                 color: var(--color-white);
             }
-            .logo-transparent {
-                display: none;
-            }
         }
 
         .header-right {
@@ -161,10 +158,11 @@
 
         .menu-wrapper {
             .logo-std {
-                color: var(--color-purple-500); // Set color for logo-std
+                display: none;
             }
             .logo-transparent {
-                color: var(--color-white); // Set color for logo-transparent
+                display: flex;
+                color: var(--color-purple-900);
             }
 
             .header-left ul.menu {

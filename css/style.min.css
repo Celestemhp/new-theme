@@ -2065,7 +2065,7 @@ body:not(.wp-admin).alignfull .alignwide {
         background-color: var(--color-blue); } }
 
 .wp-block-separator {
-  border-bottom: 1px solid var(--color-indigo); }
+  border-bottom: 1px solid var(--color-purple); }
 
 .list-bullets {
   display: flex;
@@ -2073,7 +2073,7 @@ body:not(.wp-admin).alignfull .alignwide {
   gap: 16px;
   font-weight: var(--font-weight-light); }
   .list-bullets ::marker {
-    color: var(--color-orange); }
+    color: var(--color-purple); }
 
 .list-bullets-left {
   display: flex;
@@ -2081,7 +2081,7 @@ body:not(.wp-admin).alignfull .alignwide {
   gap: 16px;
   font-weight: var(--font-weight-light); }
   .list-bullets-left ::marker {
-    color: var(--color-orange); }
+    color: var(--color-purple); }
 
 .column-center {
   display: flex;
@@ -2090,7 +2090,7 @@ body:not(.wp-admin).alignfull .alignwide {
 
 .gap-sm {
   gap: 2.625rem;
-  background-color: aqua; }
+  background-color: purple; }
 
 .gap-md {
   gap: 4.5rem; }
@@ -2125,8 +2125,6 @@ body:not(.wp-admin).alignfull .alignwide {
       #header .menu-wrapper .header-left p {
         margin: 0rem;
         color: var(--color-white); }
-      #header .menu-wrapper .header-left .logo-transparent {
-        display: none; }
     #header .menu-wrapper .header-right {
       display: flex;
       flex-direction: row;
@@ -2213,9 +2211,10 @@ body:not(.wp-admin).alignfull .alignwide {
     background-color: transparent;
     color: var(--color-white); }
     #header.has-transparent-top .menu-wrapper .logo-std {
-      color: var(--color-purple-500); }
+      display: none; }
     #header.has-transparent-top .menu-wrapper .logo-transparent {
-      color: var(--color-white); }
+      display: flex;
+      color: var(--color-purple-900); }
     #header.has-transparent-top .menu-wrapper .header-left ul.menu li a {
       color: var(--color-white);
       transition: ease opacity 0.2s; }
@@ -4579,3 +4578,15 @@ a {
 @media (min-width: 768px) {
   .sponsor-padding {
     padding-inline: 11.375rem; } }
+
+.mobile-max-height {
+  max-height: 547px !important; }
+  @media (min-width: 768px) {
+    .mobile-max-height {
+      max-height: 827px; } }
+
+.text-center-mobile {
+  text-align: center; }
+  @media (min-width: 768px) {
+    .text-center-mobile {
+      text-align: unset; } }

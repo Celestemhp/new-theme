@@ -1,11 +1,11 @@
 {
     "name": "acf/news",
-    "title": "Tíðindi",
+    "title": "Nyheder",
     "description": "",
     "style": ["file:../../../css/block-news.min.css"],
     "category": "lunnar-blocks",
     "icon": "text-page",
-    "keywords": ["tíðindi", "news"],
+    "keywords": ["nyheder", "news"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "news.php"

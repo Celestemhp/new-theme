@@ -60,8 +60,8 @@ function foroyskt_i18n_front_end($strings)
 {
     $strings['fieldsMarkedRequired'] = 'Teigar við <span class="ninja-forms-req-symbol">*</span> skulu útfyllast.';
     $strings['validateRequiredField'] = 'Hetta er ein kravdur teigur.';
-    $strings['formErrorsCorrectErrors'] = 'Vinarliga rætta feilirnar omanfyri, áðrenn tú sendir.';
-    $strings['changeEmailErrorMsg'] = 'Vinarliga skriva ein rættan teldupost-bústað.';
+    $strings['formErrorsCorrectErrors'] = 'Ret fejlene';
+    $strings['changeEmailErrorMsg'] = 'Skriv en korrekt email';
 
     return $strings;
 }

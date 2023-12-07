@@ -251,3 +251,19 @@ a {
         padding-inline: 11.375rem;
     }
 }
+// img
+.mobile-max-height {
+    max-height: 547px !important;
+
+    @media (min-width: 768px) {
+        max-height: 827px;
+    }
+}
+// center mobile
+.text-center-mobile {
+    text-align: center;
+
+    @media (min-width: 768px) {
+        text-align: unset;
+    }
+}

@@ -12,9 +12,9 @@ if (is_single() && $has_large_image) {
 
         <div class="menu-wrapper">
 
-            <a href="<?= home_url(); ?>" class="header-left top-logo">
+            <a href="<?= home_url(); ?>" class="header-left">
                 <div class="logo logo-std"><?= svg('logo-icon-purple'); ?></div>
-                <div class="logo logo-transparent"><?= svg('logo-icon-purpe'); ?></div>
+                <div class="logo logo-transparent"><?= svg('logo-icon-purple'); ?></div>
                 <p>Farum Gospel Choir</p>
             </a>
 
