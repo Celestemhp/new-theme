@@ -18,16 +18,12 @@ if (is_page()) {
 }
 
 ?>
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fo">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="da">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
-
     <title><?php wp_title('|', true, 'right'); ?></title>
-
-    <meta charset="UTF-8">
     <meta name="HandheldFriendly" content="true" />
     <meta name="apple-mobile-web-app-capable" content="YES" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

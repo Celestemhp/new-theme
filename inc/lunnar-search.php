@@ -1,5 +1,5 @@
-
 <?php
+
 /**
  * Post types to index.
  */
