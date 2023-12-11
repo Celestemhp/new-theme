@@ -1,15 +1,15 @@
 {
-    "name": "acf/accordion",
-    "title": "Accordion / OSS",
-    "description": "Accordion til OSS o.t.",
-    "style": ["file:../../../css/block-accordion.min.css"],
-    "script": "block-accordion",
-    "category": "lunnar-blocks",
-    "icon": "calendar",
-    "keywords": ["accordion", "faq", "oss"],
-    "acf": {
-        "mode": "auto",
-        "renderTemplate": "accordion.php"
-    },
-    "align": "wide"
+  "name": "acf/accordion",
+  "title": "Accordion / OSS",
+  "description": "Accordion til OSS o.t.",
+  "style": ["file:../../../css/block-accordion.min.css"],
+  "script": "block-accordion",
+  "category": "fgc-blocks",
+  "icon": "calendar",
+  "keywords": ["accordion", "faq", "oss"],
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "accordion.php"
+  },
+  "align": "wide"
 }

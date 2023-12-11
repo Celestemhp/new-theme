@@ -26,7 +26,7 @@ if (is_single() && $has_large_image) {
                     'depth' => 1,
                 )); ?>
 
-                <a href="#" class="btn-header btn-secondary right-link">
+                <a href="https://farumgospelchoir.celestemichelle.dk/book/" class="btn-header btn-secondary right-link">
                     <p>Book nu</p>
                 </a>
 

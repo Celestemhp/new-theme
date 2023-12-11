@@ -56,16 +56,16 @@ function single_id_template($template)
 /**
  * Ninjaforms translations
  */
-function foroyskt_i18n_front_end($strings)
+function da_i18n_front_end($strings)
 {
-    $strings['fieldsMarkedRequired'] = 'Teigar við <span class="ninja-forms-req-symbol">*</span> skulu útfyllast.';
-    $strings['validateRequiredField'] = 'Hetta er ein kravdur teigur.';
+    $strings['fieldsMarkedRequired'] = 'Felter med <span class="ninja-forms-req-symbol">*</span> skal udfyldes.';
+    $strings['validateRequiredField'] = 'Dette er et påkrævet felt.';
     $strings['formErrorsCorrectErrors'] = 'Ret fejlene';
     $strings['changeEmailErrorMsg'] = 'Skriv en korrekt email';
 
     return $strings;
 }
-add_filter('ninja_forms_i18n_front_end', 'foroyskt_i18n_front_end');
+add_filter('ninja_forms_i18n_front_end', 'da_i18n_front_end');
 
 
 /**
@@ -74,7 +74,7 @@ add_filter('ninja_forms_i18n_front_end', 'foroyskt_i18n_front_end');
 function svg($name, $alt = '')
 {
     $image_url = get_template_directory_uri() . '/images/';
-    echo '<img data-src="' . $image_url . $name . '.svg" class="injectable lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="' . esc_attr($alt) . '" />';
+    echo '<img data-src="' . $image_url . $name . '.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="' . esc_attr($alt) . '" />';
 }
 
 

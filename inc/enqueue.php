@@ -35,7 +35,7 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('search', get_template_directory_uri() . '/js/search.js', null, null, true);
     }
 
-    wp_enqueue_script('svg-inject', get_template_directory_uri() . '/js/svg-inject.min.js', null, null, true);
+
     wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', null, null, true);
 });
 

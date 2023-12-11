@@ -33,7 +33,7 @@ $address_info = get_field('address_info', 'option');
                             'container' => '',
                             'depth' => 1,
                         )); ?>
-                        <a href="https://www.mammuhjalpin.fo/" target="_blank" class="link-decoration">
+                        <a href="<?= home_url(); ?>" target="_blank" class="link-decoration">
                             Intranet
                             <?= svg('arrow_up'); ?>
                         </a>
