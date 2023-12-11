@@ -5,12 +5,12 @@
 <main class="main-404">
 
     <h1>404</h1>
-    <h3>Síðan ikki funnin</h3>
-    <p>Síðan sum tú leitar eftir er tíverri ikki at finna.</p>
+    <h3>Siden ikke fundet</h3>
+    <p>Siden du leder efter findes ikke</p>
 
     <div class="header-right">
         <a href="<?= home_url(); ?>" class="btn-404">
-            <p>Til forsíðuna</p>
+            <p>Til forside</p>
         </a>
 
         <!-- mobile -->

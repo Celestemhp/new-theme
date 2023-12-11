@@ -88,24 +88,7 @@ function lunnar_search_serialize(WP_Post $post)
         return $attributes;
     }
 
-    /**
-     * Jobs
-     */
-    if ($post->post_type === 'jobs') {
 
-        $attributes = array(
-            'objectID' => implode('#', [$post->post_type, $post->ID]),
-            'post_id' => $post->ID,
-            'post_type' => $post->post_type,
-            'post_title' => $post->post_title,
-            'excerpt' => $post->post_excerpt,
-            'content' => mb_substr(stripcslashes(strip_tags($post->post_content)), 0, 5000, 'UTF-8'),
-            'url' => get_post_permalink($post->ID),
-            'search_weight' => 2
-        );
-
-        return $attributes;
-    }
 
     /**
      * Forms
@@ -159,43 +142,6 @@ function lunnar_search_serialize(WP_Post $post)
         );
 
         return $attributes;
-    }
-
-    /**
-     * People
-     */
-    if ($post->post_type === 'people') {
-
-        $categories = array_map(function (WP_Term $term) {
-            return $term->name;
-        }, wp_get_post_terms($post->ID, 'people_categories'));
-
-        $img = wp_get_attachment_image_src(get_field('image', $post->ID), 'medium');
-
-        $image = [];
-
-        if ($img) {
-            $image = [
-                'url' => $img[0],
-                'focal_point' => get_focal_points(get_field('image', $post->ID))
-            ];
-        }
-
-        return [
-            'objectID' => implode('#', [$post->post_type, $post->ID]),
-            'post_id' => $post->ID,
-            'post_type' => $post->post_type,
-            'post_title' => $post->post_title,
-            'excerpt' => $post->post_excerpt,
-            'image' => $image,
-            'content' => mb_substr(stripcslashes(strip_tags($post->post_content)), 0, 5000, 'UTF-8'),
-            'url' => '/starvsfolk?q=' . $post->post_title,
-            'title' => get_field('title', $post->ID),
-            'email' => get_field('email', $post->ID),
-            'phone' => get_field('phone', $post->ID),
-            'post_category' => count($categories) ? $categories[0] : '',
-            'search_weight' => 2
-        ];
     }
 }
 add_filter('post_to_record', 'lunnar_search_serialize');

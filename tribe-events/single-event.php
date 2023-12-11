@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
 <?php
+$event_id = get_the_ID(); // Få indlæggets ID som event_id
+$event = get_post($event_id); // Hent indlægget som et objekt
+
 $start_date = tribe_get_start_date($event_id, false, 'D, F j, Y');
 $event_cost = tribe_get_cost($event);
 $start_time = tribe_get_start_date($event_id, false, 'H:i');
@@ -8,10 +11,9 @@ $event_map = tribe_get_embedded_map($event, $force_load = false, $width = null, 
 ?>
 
 <script>
-    let postId = <?= $post->ID; ?>;
-    let postDuration = '<?= $post->post_duration; ?>';
+    let postId = <?= $event_id; ?>;
+    let postDuration = '<?= $event->post_duration; ?>';
 </script>
-
 
 <main class="post-page--event alignwide">
 
@@ -45,7 +47,7 @@ $event_map = tribe_get_embedded_map($event, $force_load = false, $width = null, 
                 <div class="info-container">
                     <div class="location-container">
                         <?= svg('icon-location'); ?>
-                        <h5><?= tribe_get_venue($post->ID); ?></h5>
+                        <h5><?= tribe_get_venue($event_id); ?></h5>
                     </div>
 
                     <div class="price-container">
@@ -74,7 +76,5 @@ $event_map = tribe_get_embedded_map($event, $force_load = false, $width = null, 
         </div>
     </div>
 </main>
-
-
 
 <?php get_footer(); ?>

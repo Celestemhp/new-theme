@@ -88,7 +88,8 @@ add_filter('big_image_size_threshold', '__return_false');
  */
 function convert_date($format, $time = null)
 {
-    global $my_locale;
+    $my_locale = get_locale(); // Hent den aktuelle lokalitet
+
     if ($time == null) $time = time();
 
     if ($my_locale == "en_US") return strftime($format, $time);
@@ -118,16 +119,16 @@ function get_formatted_date($post_date, $short = true, $lang = 'da')
         return null;
     }
 
-    $months = ["januar", "februar", "mars", "apríl", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
+    $months = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"];
 
     if ($short) {
-        $months = ["jan.", "feb.", "mar.", "apr.", "mai", "jun.", "jul.", "aug.", "sept.", "okt.", "nov.", "des."];
+        $months = ["jan.", "feb.", "mar.", "apr.", "maj", "jun.", "jul.", "aug.", "sept.", "okt.", "nov.", "dec."];
     }
 
-    if ($lang !== 'fo') {
+    if ($lang !== 'da') {
         $months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         if ($short) {
-            $months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Des."];
+            $months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
         }
     }
 

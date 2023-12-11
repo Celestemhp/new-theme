@@ -90,11 +90,6 @@
             "background": "var(--color-background)"
         },
         "elements": {
-            "link": {
-                "color": {
-                    "text": "var(--color-link)"
-                }
-            },
             "h1": {
                 "typography": {
                     "fontSize": "var(--font-size-h1)",

@@ -16,7 +16,7 @@ $image_caption = wp_get_attachment_caption($post_thumbnail_id);
 <main class="post-page post-single">
     <a href="#" class="post-back">
         <?= svg('arrow_chevron'); ?>
-        <p>Aftur</p>
+        <p>Tilbage</p>
     </a>
 
     <?php if ($post_thumbnail_id) : ?>
