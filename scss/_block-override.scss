@@ -282,7 +282,7 @@
     th,
     td {
         border: 1px solid #888;
-        font-weight: 400;
+        font-weight: normal;
         padding: 0.5rem 1rem;
         line-height: 1.75;
     }
@@ -427,30 +427,6 @@ body:not(.wp-admin) {
 
 .wp-block-separator {
     border-bottom: 1px solid var(--color-purple);
-}
-
-// list bullets center
-.list-bullets {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-weight: var(--font-weight-light);
-
-    ::marker {
-        color: var(--color-purple);
-    }
-}
-
-// list bullets
-.list-bullets-left {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-weight: var(--font-weight-light);
-
-    ::marker {
-        color: var(--color-purple);
-    }
 }
 
 // column center

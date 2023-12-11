@@ -69,14 +69,14 @@ add_filter('ninja_forms_i18n_front_end', 'foroyskt_i18n_front_end');
 
 
 /**
- * Echo an SVG
+ * Echo an SVG with alt attribute
  */
-
-function svg($name)
+function svg($name, $alt = '')
 {
     $image_url = get_template_directory_uri() . '/images/';
-    echo '<img src="' . $image_url . $name . '.svg" class="injectable" />';
+    echo '<img data-src="' . $image_url . $name . '.svg" class="injectable lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="' . esc_attr($alt) . '" />';
 }
+
 
 /**
  * Prevent Wordpress from making _scaled images on large image sizes

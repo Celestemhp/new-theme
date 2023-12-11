@@ -1,8 +1,8 @@
 <div class="media-container">
-    <a href="https://www.facebook.com/provita.fo/" target="_blank">
+    <a href="https://www.facebook.com/FarumGospel" target="_blank">
         <?= svg('icon-facebook'); ?>
     </a>
-    <a href="https://www.instagram.com/fyrilivi/" target="_blank">
+    <a href="https://instagram.com/farumgospelchoir?igshid=MmVlMjlkMTBhMg==" target="_blank">
         <?= svg('icon-instagram'); ?>
     </a>
 </div>

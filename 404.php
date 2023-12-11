@@ -9,17 +9,17 @@
     <p>Síðan sum tú leitar eftir er tíverri ikki at finna.</p>
 
     <div class="header-right">
-                <a href="<?= home_url(); ?>" class="btn-404">
-                    <p>Til forsíðuna</p>
-                </a>
+        <a href="<?= home_url(); ?>" class="btn-404">
+            <p>Til forsíðuna</p>
+        </a>
 
-            <!-- mobile -->
-                <div class="mobile-menu">
-                    <a href="#" class="top-menu toggle-menu">
-                    <?= svg('icon-menu'); ?>
-                    </a>
-                </div>
-            </div>
+        <!-- mobile -->
+        <div class="mobile-menu">
+            <a href="#" class="top-menu toggle-menu">
+                <?= svg('icon-menu', 'icon-menu'); ?>
+            </a>
+        </div>
+    </div>
 </main>
 
 <?php get_footer(); ?>
