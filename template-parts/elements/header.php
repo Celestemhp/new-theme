@@ -14,7 +14,7 @@ if (is_single() && $has_large_image) {
 
             <a href="<?= home_url(); ?>" class="header-left">
                 <div class="logo logo-std"><?= svg('logo-icon-purple'); ?></div>
-                <div class="logo logo-transparent"><?= svg('logo-icon-purple'); ?></div>
+                <div class="logo logo-transparent"><?= svg('logo-icon-white'); ?></div>
                 <p>Farum Gospel Choir</p>
             </a>
 

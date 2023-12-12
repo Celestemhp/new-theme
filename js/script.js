@@ -28,52 +28,28 @@ window.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("#header");
 
   let lastY = window.scrollY;
-  let transparentOnInit = false;
-
-  if (header.classList.contains("is-transparent")) {
-    transparentOnInit = true;
-  }
+  let hasTransparentTop = header.classList.contains("has-transparent-top");
 
   window.onscroll = function () {
-    // at the top
-    if (window.scrollY < 2 && transparentOnInit) {
-      header.classList.add("is-transparent");
-    }
-
     if (window.scrollY < 2) {
       header.classList.remove("is-fixed");
-      return;
-    }
-
-    if (window.scrollY < 150) {
-      header.classList.remove("is-fixed");
-      header.classList.remove("is-hidden");
-      if (transparentOnInit) {
+      if (hasTransparentTop) {
         header.classList.add("is-transparent");
       }
     } else {
-      if (transparentOnInit) {
-        header.classList.remove("is-transparent");
-      }
+      header.classList.remove("is-transparent");
     }
 
-    if (lastY > window.scrollY) {
-      // when scrolling up
-      header.classList.remove("is-hidden");
-
-      // when scrolling down first 5px
-      if (window.scrollY > 5) {
+    if (window.scrollY > 150) {
+      if (lastY > window.scrollY) {
+        header.classList.remove("is-hidden");
         header.classList.add("is-fixed");
+      } else {
+        header.classList.add("is-hidden");
+        header.classList.remove("is-fixed");
       }
-    } else {
-      // when scrolling down
-      header.classList.add("is-hidden");
-      header.classList.remove("is-fixed");
     }
 
-    if (transparentOnInit) {
-      header.classList.add("is-fixed");
-    }
     lastY = window.scrollY;
   };
 })();
