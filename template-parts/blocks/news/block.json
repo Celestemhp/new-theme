@@ -1,14 +1,14 @@
 {
-    "name": "acf/news",
-    "title": "Nyheder",
-    "description": "",
-    "style": ["file:../../../css/block-news.min.css"],
-    "category": "lunnar-blocks",
-    "icon": "text-page",
-    "keywords": ["nyheder", "news"],
-    "acf": {
-        "mode": "preview",
-        "renderTemplate": "news.php"
-    },
-    "align": ["wide"]
+  "name": "acf/news",
+  "title": "Nyheder",
+  "description": "",
+  "style": ["file:../../../css/block-news.min.css"],
+  "category": "lunnar-blocks",
+  "icon": "text-page",
+  "keywords": ["nyheder", "news"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "news.php"
+  },
+  "align": ["wide"]
 }

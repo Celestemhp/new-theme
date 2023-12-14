@@ -26,13 +26,23 @@
           "color": "var(--color-rosa)"
         },
         {
+          "name": "Light purple",
+          "slug": "light-purple",
+          "color": "var(--color-purple-400)"
+        },
+        {
           "name": "Purple",
           "slug": "purple",
           "color": "var(--color-purple)"
         },
         {
           "name": "Dark purple",
-          "slug": "dark purple",
+          "slug": "dark-purple",
+          "color": "var(--color-purple-600)"
+        },
+        {
+          "name": "Darker purple",
+          "slug": "darker-purple",
           "color": "var(--color-purple-900)"
         },
         {

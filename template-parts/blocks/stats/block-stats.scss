@@ -1,107 +1,107 @@
 .lunnar-stats {
+  width: 100% !important;
+
+  @media (min-width: 992px) {
+    width: 100% !important;
+  }
+  .stats-slider {
     width: 100% !important;
 
     @media (min-width: 992px) {
-        width: 100% !important;
+      overflow-x: hidden;
+      margin-left: -2rem;
     }
-    .stats-slider {
-        width: 100% !important;
 
-        @media (min-width: 992px) {
-            overflow-x: hidden;
-            margin-left: -2rem;
-        }
-
-        .swiper-wrapper {
-            display: flex;
-            gap: 1rem;
-            width: 100%;
-            @media (min-width: 992px) {
-                justify-content: center;
-            }
-        }
-
-        .stat-item {
-            background-color: #000;
-            color: var(--color-white);
-            height: auto;
-            width: 100%;
-            padding-block: 2rem;
-            padding-inline: 4rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-right: 0 !important;
-
-            p {
-                width: 13rem;
-            }
-
-            &:nth-child(1) {
-                background-color: var(--color-mint);
-
-                h2 {
-                    color: var(--color-green);
-                    font-weight: 500;
-                }
-            }
-
-            &:nth-child(2) {
-                background-color: var(--color-orange-400);
-
-                h2 {
-                    color: var(--color-orange);
-                    font-weight: 500;
-                }
-            }
-
-            &:nth-child(3) {
-                background-color: var(--color-rosa);
-                display: flex;
-
-                h2 {
-                    color: var(--color-rosa-600);
-                    font-weight: 500;
-                }
-            }
-        }
-
-        .swiper-pagination {
-            position: relative;
-            margin-top: 1rem;
-
-            .swiper-pagination-bullet {
-                .swiper-pagination-bullet-active {
-                    color: var(--color-orange);
-                }
-            }
-        }
+    .swiper-wrapper {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+      @media (min-width: 992px) {
+        justify-content: center;
+      }
     }
+
+    .stat-item {
+      background-color: #000;
+      color: var(--color-white);
+      height: auto;
+      width: 100%;
+      padding-block: 2rem;
+      padding-inline: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-right: 0 !important;
+
+      p {
+        width: 13rem;
+      }
+
+      &:nth-child(1) {
+        background-color: var(--color-mint);
+
+        h2 {
+          color: var(--color-green);
+          font-weight: 500;
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: var(--color-orange-400);
+
+        h2 {
+          color: var(--color-orange);
+          font-weight: 500;
+        }
+      }
+
+      &:nth-child(3) {
+        background-color: var(--color-rosa);
+        display: flex;
+
+        h2 {
+          color: var(--color-rosa-600);
+          font-weight: 500;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 1rem;
+
+      .swiper-pagination-bullet {
+        .swiper-pagination-bullet-active {
+          color: var(--color-orange);
+        }
+      }
+    }
+  }
 }
 
 .wp-admin {
-    .lunnar-stats {
-        .stats-slider {
-            width: 100% !important;
+  .lunnar-stats {
+    .stats-slider {
+      width: 100% !important;
 
-            .swiper-wrapper {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-                width: 100%;
+      .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        width: 100%;
 
-                .stat-item {
-                    display: none;
+        .stat-item {
+          display: none;
 
-                    &:nth-child(1),
-                    &:nth-child(2),
-                    &:nth-child(3) {
-                        display: flex;
-                    }
-                }
-            }
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: flex;
+          }
         }
+      }
     }
+  }
 }

@@ -182,22 +182,26 @@ table {
     Get contrasting color
 */
 :root {
-  --color-purple: #9c5bff;
-  --color-purple-rgb: 156, 91, 255;
-  --color-purple: #9c5bff;
+  --color-purple-400: #9c5bff;
+  --color-purple-400-rgb: 156, 91, 255;
+  --color-purple-400: #9c5bff;
+  --color-purple-400-contrast: var(--color-white);
+  --color-purple: #8f4af8;
+  --color-purple-rgb: 143, 74, 248;
+  --color-purple: #8f4af8;
   --color-purple-contrast: var(--color-white);
-  --color-purple-500: #9c5bff;
-  --color-purple-500-rgb: 156, 91, 255;
-  --color-purple-500: #9c5bff;
+  --color-purple-500: #8f4af8;
+  --color-purple-500-rgb: 143, 74, 248;
+  --color-purple-500: #8f4af8;
   --color-purple-500-contrast: var(--color-white);
-  --color-purple-600: #6f4cd3;
-  --color-purple-600-rgb: 111, 76, 211;
-  --color-purple-600: #6f4cd3;
-  --color-purple-600-contrast: var(--color-white);
   --color-purple-800: #37268d;
   --color-purple-800-rgb: 55, 38, 141;
   --color-purple-800: #37268d;
   --color-purple-800-contrast: var(--color-white);
+  --color-purple-600: #6f4cd3;
+  --color-purple-600-rgb: 111, 76, 211;
+  --color-purple-600: #6f4cd3;
+  --color-purple-600-contrast: var(--color-white);
   --color-purple-900: #211238;
   --color-purple-900-rgb: 33, 18, 56;
   --color-purple-900: #211238;
@@ -436,6 +440,12 @@ strong {
 .text-shadow {
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5); }
 
+.has-purple-400-color {
+  color: var(--color-purple-400) !important; }
+
+.has-purple-400-background-color {
+  background-color: var(--color-purple-400) !important; }
+
 .has-purple-color {
   color: var(--color-purple) !important; }
 
@@ -448,17 +458,17 @@ strong {
 .has-purple-500-background-color {
   background-color: var(--color-purple-500) !important; }
 
-.has-purple-600-color {
-  color: var(--color-purple-600) !important; }
-
-.has-purple-600-background-color {
-  background-color: var(--color-purple-600) !important; }
-
 .has-purple-800-color {
   color: var(--color-purple-800) !important; }
 
 .has-purple-800-background-color {
   background-color: var(--color-purple-800) !important; }
+
+.has-purple-600-color {
+  color: var(--color-purple-600) !important; }
+
+.has-purple-600-background-color {
+  background-color: var(--color-purple-600) !important; }
 
 .has-purple-900-color {
   color: var(--color-purple-900) !important; }
@@ -1829,7 +1839,7 @@ body:not(.wp-admin) .hide-mobile {
       height: 2rem;
       width: 2rem;
       padding: 0;
-      mask: url("../images/icon-circle-arrow.svg");
+      mask: url("icon-pil");
       background-color: var(--color-white);
       mask-size: 2rem;
       mask-position: center;
@@ -2162,12 +2172,13 @@ body:not(.wp-admin).alignfull .alignwide {
             display: flex; } }
   #header.is-fixed {
     position: fixed;
-    background-color: var(--color-background);
-    color: var(--dark-900); }
+    background-color: var(--color-background); }
     #header.is-fixed svg,
-    #header.is-fixed p {
-      color: var(--dark-900); }
+    #header.is-fixed p,
+    #header.is-fixed a {
+      color: var(--dark-900) !important; }
     #header.is-fixed .logo-std {
+      display: flex;
       fill: var(--color-purple-500); }
   #header.is-hidden {
     transform: translateY(-100%); }
@@ -2198,7 +2209,8 @@ body:not(.wp-admin).alignfull .alignwide {
     background-color: transparent;
     color: var(--color-white); }
     #header.has-transparent-top .menu-wrapper .logo-std {
-      fill: var(--color-white); }
+      fill: var(--color-purple-500);
+      display: flex; }
     #header.has-transparent-top .menu-wrapper .header-left ul.menu li a {
       color: var(--color-white);
       transition: ease opacity 0.2s; }
@@ -2647,11 +2659,10 @@ svg {
       display: flex;
       align-items: center;
       flex-direction: row;
-      gap: 1.8rem; }
+      gap: 1.8rem;
+      padding-inline: var(--container-padding); }
       #lunnar-menu .lunnar-menu--top .top-menu--left .logo {
         width: 3rem; }
-        #lunnar-menu .lunnar-menu--top .top-menu--left .logo svg {
-          color: #800080; }
       #lunnar-menu .lunnar-menu--top .top-menu--left p {
         margin: 0rem; }
     #lunnar-menu .lunnar-menu--top .lunnar-menu--close {
@@ -2770,6 +2781,13 @@ svg {
     opacity: 0.33; }
   .btn.is-small {
     padding: 0.45rem 1.5rem !important; }
+  .btn.has-purple-400-color {
+    color: var(--color-purple-400);
+    border-color: var(--color-purple-400); }
+  .btn.has-purple-400-background-color {
+    color: var(--color-purple-400-contrast);
+    border-color: var(--color-purple-400);
+    background-color: var(--color-purple-400); }
   .btn.has-purple-color {
     color: var(--color-purple);
     border-color: var(--color-purple); }
@@ -2784,13 +2802,6 @@ svg {
     color: var(--color-purple-500-contrast);
     border-color: var(--color-purple-500);
     background-color: var(--color-purple-500); }
-  .btn.has-purple-600-color {
-    color: var(--color-purple-600);
-    border-color: var(--color-purple-600); }
-  .btn.has-purple-600-background-color {
-    color: var(--color-purple-600-contrast);
-    border-color: var(--color-purple-600);
-    background-color: var(--color-purple-600); }
   .btn.has-purple-800-color {
     color: var(--color-purple-800);
     border-color: var(--color-purple-800); }
@@ -2798,6 +2809,13 @@ svg {
     color: var(--color-purple-800-contrast);
     border-color: var(--color-purple-800);
     background-color: var(--color-purple-800); }
+  .btn.has-purple-600-color {
+    color: var(--color-purple-600);
+    border-color: var(--color-purple-600); }
+  .btn.has-purple-600-background-color {
+    color: var(--color-purple-600-contrast);
+    border-color: var(--color-purple-600);
+    background-color: var(--color-purple-600); }
   .btn.has-purple-900-color {
     color: var(--color-purple-900);
     border-color: var(--color-purple-900); }
@@ -3045,6 +3063,13 @@ svg {
     opacity: 0.33; }
   .wp-block-button .wp-block-button__link.is-small {
     padding: 0.45rem 1.5rem !important; }
+  .wp-block-button .wp-block-button__link.has-purple-400-color {
+    color: var(--color-purple-400);
+    border-color: var(--color-purple-400); }
+  .wp-block-button .wp-block-button__link.has-purple-400-background-color {
+    color: var(--color-purple-400-contrast);
+    border-color: var(--color-purple-400);
+    background-color: var(--color-purple-400); }
   .wp-block-button .wp-block-button__link.has-purple-color {
     color: var(--color-purple);
     border-color: var(--color-purple); }
@@ -3059,13 +3084,6 @@ svg {
     color: var(--color-purple-500-contrast);
     border-color: var(--color-purple-500);
     background-color: var(--color-purple-500); }
-  .wp-block-button .wp-block-button__link.has-purple-600-color {
-    color: var(--color-purple-600);
-    border-color: var(--color-purple-600); }
-  .wp-block-button .wp-block-button__link.has-purple-600-background-color {
-    color: var(--color-purple-600-contrast);
-    border-color: var(--color-purple-600);
-    background-color: var(--color-purple-600); }
   .wp-block-button .wp-block-button__link.has-purple-800-color {
     color: var(--color-purple-800);
     border-color: var(--color-purple-800); }
@@ -3073,6 +3091,13 @@ svg {
     color: var(--color-purple-800-contrast);
     border-color: var(--color-purple-800);
     background-color: var(--color-purple-800); }
+  .wp-block-button .wp-block-button__link.has-purple-600-color {
+    color: var(--color-purple-600);
+    border-color: var(--color-purple-600); }
+  .wp-block-button .wp-block-button__link.has-purple-600-background-color {
+    color: var(--color-purple-600-contrast);
+    border-color: var(--color-purple-600);
+    background-color: var(--color-purple-600); }
   .wp-block-button .wp-block-button__link.has-purple-900-color {
     color: var(--color-purple-900);
     border-color: var(--color-purple-900); }
@@ -3294,14 +3319,16 @@ svg {
 .wp-block-button.is-style-outline .wp-block-button__link {
   color: var(--color-purple-500);
   box-sizing: border-box; }
+  .wp-block-button.is-style-outline .wp-block-button__link.has-purple-400-color {
+    color: var(--color-purple-400) !important; }
   .wp-block-button.is-style-outline .wp-block-button__link.has-purple-color {
     color: var(--color-purple) !important; }
   .wp-block-button.is-style-outline .wp-block-button__link.has-purple-500-color {
     color: var(--color-purple-500) !important; }
-  .wp-block-button.is-style-outline .wp-block-button__link.has-purple-600-color {
-    color: var(--color-purple-600) !important; }
   .wp-block-button.is-style-outline .wp-block-button__link.has-purple-800-color {
     color: var(--color-purple-800) !important; }
+  .wp-block-button.is-style-outline .wp-block-button__link.has-purple-600-color {
+    color: var(--color-purple-600) !important; }
   .wp-block-button.is-style-outline .wp-block-button__link.has-purple-900-color {
     color: var(--color-purple-900) !important; }
   .wp-block-button.is-style-outline .wp-block-button__link.has-rosa-color {
@@ -3388,6 +3415,13 @@ svg {
     opacity: 0.33; }
   .wp-block-file a.wp-block-file__button.is-small {
     padding: 0.45rem 1.5rem !important; }
+  .wp-block-file a.wp-block-file__button.has-purple-400-color {
+    color: var(--color-purple-400);
+    border-color: var(--color-purple-400); }
+  .wp-block-file a.wp-block-file__button.has-purple-400-background-color {
+    color: var(--color-purple-400-contrast);
+    border-color: var(--color-purple-400);
+    background-color: var(--color-purple-400); }
   .wp-block-file a.wp-block-file__button.has-purple-color {
     color: var(--color-purple);
     border-color: var(--color-purple); }
@@ -3402,13 +3436,6 @@ svg {
     color: var(--color-purple-500-contrast);
     border-color: var(--color-purple-500);
     background-color: var(--color-purple-500); }
-  .wp-block-file a.wp-block-file__button.has-purple-600-color {
-    color: var(--color-purple-600);
-    border-color: var(--color-purple-600); }
-  .wp-block-file a.wp-block-file__button.has-purple-600-background-color {
-    color: var(--color-purple-600-contrast);
-    border-color: var(--color-purple-600);
-    background-color: var(--color-purple-600); }
   .wp-block-file a.wp-block-file__button.has-purple-800-color {
     color: var(--color-purple-800);
     border-color: var(--color-purple-800); }
@@ -3416,6 +3443,13 @@ svg {
     color: var(--color-purple-800-contrast);
     border-color: var(--color-purple-800);
     background-color: var(--color-purple-800); }
+  .wp-block-file a.wp-block-file__button.has-purple-600-color {
+    color: var(--color-purple-600);
+    border-color: var(--color-purple-600); }
+  .wp-block-file a.wp-block-file__button.has-purple-600-background-color {
+    color: var(--color-purple-600-contrast);
+    border-color: var(--color-purple-600);
+    background-color: var(--color-purple-600); }
   .wp-block-file a.wp-block-file__button.has-purple-900-color {
     color: var(--color-purple-900);
     border-color: var(--color-purple-900); }
@@ -3822,6 +3856,13 @@ svg {
       opacity: 0.33; }
     .form-container .submit-wrap .nf-field-element input.is-small {
       padding: 0.45rem 1.5rem !important; }
+    .form-container .submit-wrap .nf-field-element input.has-purple-400-color {
+      color: var(--color-purple-400);
+      border-color: var(--color-purple-400); }
+    .form-container .submit-wrap .nf-field-element input.has-purple-400-background-color {
+      color: var(--color-purple-400-contrast);
+      border-color: var(--color-purple-400);
+      background-color: var(--color-purple-400); }
     .form-container .submit-wrap .nf-field-element input.has-purple-color {
       color: var(--color-purple);
       border-color: var(--color-purple); }
@@ -3836,13 +3877,6 @@ svg {
       color: var(--color-purple-500-contrast);
       border-color: var(--color-purple-500);
       background-color: var(--color-purple-500); }
-    .form-container .submit-wrap .nf-field-element input.has-purple-600-color {
-      color: var(--color-purple-600);
-      border-color: var(--color-purple-600); }
-    .form-container .submit-wrap .nf-field-element input.has-purple-600-background-color {
-      color: var(--color-purple-600-contrast);
-      border-color: var(--color-purple-600);
-      background-color: var(--color-purple-600); }
     .form-container .submit-wrap .nf-field-element input.has-purple-800-color {
       color: var(--color-purple-800);
       border-color: var(--color-purple-800); }
@@ -3850,6 +3884,13 @@ svg {
       color: var(--color-purple-800-contrast);
       border-color: var(--color-purple-800);
       background-color: var(--color-purple-800); }
+    .form-container .submit-wrap .nf-field-element input.has-purple-600-color {
+      color: var(--color-purple-600);
+      border-color: var(--color-purple-600); }
+    .form-container .submit-wrap .nf-field-element input.has-purple-600-background-color {
+      color: var(--color-purple-600-contrast);
+      border-color: var(--color-purple-600);
+      background-color: var(--color-purple-600); }
     .form-container .submit-wrap .nf-field-element input.has-purple-900-color {
       color: var(--color-purple-900);
       border-color: var(--color-purple-900); }

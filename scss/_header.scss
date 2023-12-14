@@ -110,13 +110,15 @@
   &.is-fixed {
     position: fixed;
     background-color: var(--color-background);
-    color: var(--dark-900);
+    // color: var(--dark-900);
 
     svg,
-    p {
-      color: var(--dark-900);
+    p,
+    a {
+      color: var(--dark-900) !important;
     }
     .logo-std {
+      display: flex;
       fill: var(--color-purple-500);
     }
   }
@@ -163,7 +165,8 @@
 
     .menu-wrapper {
       .logo-std {
-        fill: var(--color-white);
+        fill: var(--color-purple-500);
+        display: flex;
       }
 
       .header-left ul.menu {

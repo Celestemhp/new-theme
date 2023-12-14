@@ -1,15 +1,15 @@
 {
-    "name": "acf/video-embed",
-    "title": "Filmsbrot (embed)",
-    "description": "YouTube ella Vimeo",
-    "style": ["file:../../../css/block-video-embed.min.css"],
-    "script": "block-video-embed",
-    "category": "lunnar-blocks",
-    "icon": "admin-comments",
-    "keywords": ["embed", "video"],
-    "acf": {
-        "mode": "preview",
-        "renderTemplate": "video-embed.php"
-    },
-    "align": "wide"
+  "name": "acf/video-embed",
+  "title": "Videoer (embed)",
+  "description": "YouTube eller Vimeo",
+  "style": ["file:../../../css/block-video-embed.min.css"],
+  "script": "block-video-embed",
+  "category": "lunnar-blocks",
+  "icon": "admin-comments",
+  "keywords": ["embed", "video"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "video-embed.php"
+  },
+  "align": "wide"
 }

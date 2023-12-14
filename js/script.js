@@ -2,8 +2,6 @@ window.addEventListener("DOMContentLoaded", () => {
   SVGInject(document.querySelectorAll("img.injectable"));
 });
 
-// console.log("Script loaded!");
-
 (function () {
   const desktopMenuBtn = document.querySelectorAll(".toggle-menu");
   const desktopMenu = document.querySelector("#lunnar-menu");
