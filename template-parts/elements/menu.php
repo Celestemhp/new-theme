@@ -1,5 +1,5 @@
-<div id="lunnar-menu">
-    <div class="lunnar-menu--top">
+<div id="fgc-menu">
+    <div class="fgc-menu--top">
 
         <div class="top-menu--left">
             <a href="<?= home_url(); ?>" class="top-logo">
@@ -8,7 +8,7 @@
             <p>Farum Gospel Choir</p>
         </div>
 
-        <div class="lunnar-menu--close toggle-menu">
+        <div class="fgc-menu--close toggle-menu">
             <?= svg('close-menu'); ?>
         </div>
     </div>
@@ -34,10 +34,10 @@
                 <h3>Følg os</h3>
                 <div class="menu-social-links">
                     <a href="https://www.facebook.com/FarumGospel" target="_blank">
-                        <?= svg('icon-facebook'); ?>
+                        <?= svg('fb-iconvir'); ?>
                     </a>
                     <a href="https://instagram.com/farumgospelchoir?igshid=MmVlMjlkMTBhMg==" target="_blank">
-                        <?= svg('icon-instagram'); ?>
+                        <?= svg('ig-icon'); ?>
                     </a>
                 </div>
             </div>

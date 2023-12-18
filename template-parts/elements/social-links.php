@@ -3,6 +3,6 @@
         <?= svg('fb-icon'); ?>
     </a>
     <a href="https://instagram.com/farumgospelchoir?igshid=MmVlMjlkMTBhMg==" target="_blank">
-        <?= svg('icon-ig'); ?>
+        <?= svg('ig-icon'); ?>
     </a>
 </div>

@@ -4,51 +4,61 @@ window.addEventListener("DOMContentLoaded", () => {
 
 (function () {
   const desktopMenuBtn = document.querySelectorAll(".toggle-menu");
-  const desktopMenu = document.querySelector("#lunnar-menu");
+  const desktopMenu = document.querySelector("#fgc-menu");
 
-  desktopMenuBtn.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      if (desktopMenu.classList.contains("is-active")) {
-        desktopMenu.classList.remove("is-active");
-      } else {
-        desktopMenu.classList.add("is-active");
-      }
-    });
-  });
-})();
-
-/**
- * Header Nav
- */
-(function () {
   const header = document.querySelector("#header");
+  const logoStd = document.querySelector(".logo-std");
+  const logoTransparent = document.querySelector(".logo-transparent");
 
   let lastY = window.scrollY;
-  let hasTransparentTop = header.classList.contains("has-transparent-top");
+  let transparentOnInit = false;
+
+  if (header.classList.contains("is-transparent")) {
+    transparentOnInit = true;
+    // Initially, hide the transparent logo and show the standard logo
+    logoStd.style.display = "block";
+    logoTransparent.style.display = "none";
+  }
 
   window.onscroll = function () {
-    if (window.scrollY < 2) {
+    const scrollTop = window.scrollY;
+
+    console.log("Scroll Top:", scrollTop);
+
+    if (scrollTop < 2 && transparentOnInit) {
+      console.log("Adding is-transparent class");
+      header.classList.add("is-transparent");
+      // Show the transparent logo and hide the standard logo
+      logoStd.style.display = "none";
+      logoTransparent.style.display = "flex";
+    } else if (scrollTop < 150) {
       header.classList.remove("is-fixed");
-      if (hasTransparentTop) {
+      header.classList.remove("is-hidden");
+      if (transparentOnInit) {
+        console.log("Adding is-transparent class");
         header.classList.add("is-transparent");
+        // Show the transparent logo and hide the standard logo
+        logoStd.style.display = "none";
+        logoTransparent.style.display = "flex";
       }
     } else {
       header.classList.remove("is-transparent");
-    }
-
-    if (window.scrollY > 150) {
-      if (lastY > window.scrollY) {
-        header.classList.remove("is-hidden");
-        header.classList.add("is-fixed");
-      } else {
+      if (scrollTop > lastY) {
         header.classList.add("is-hidden");
         header.classList.remove("is-fixed");
+      } else {
+        header.classList.remove("is-hidden");
+        if (scrollTop > 5) {
+          header.classList.add("is-fixed");
+        }
       }
+
+      // Show the standard logo and hide the transparent logo
+      logoStd.style.display = "block";
+      logoTransparent.style.display = "none";
     }
 
-    lastY = window.scrollY;
+    lastY = scrollTop;
   };
 })();
 

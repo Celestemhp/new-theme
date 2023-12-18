@@ -6,7 +6,7 @@ if (!empty($block['anchor'])) {
     $id = $block['anchor'];
 }
 
-$className = 'lunnar-' . $blockName;
+$className = 'fgc-' . $blockName;
 if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
 }

@@ -1,6 +1,6 @@
 {
   "name": "acf/shortcut",
-  "title": "Sniðvegur",
+  "title": "Genveje",
   "description": "Kasse med billede og tekst, som kan vise undersider",
   "style": ["file:../../../css/block-shortcut.min.css"],
   "category": "lunnar-blocks",

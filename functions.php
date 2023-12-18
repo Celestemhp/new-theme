@@ -88,7 +88,7 @@ add_filter('big_image_size_threshold', '__return_false');
  */
 function convert_date($format, $time = null)
 {
-    $my_locale = get_locale(); // Hent den aktuelle lokalitet
+    $my_locale = my_locale(); // Hent den aktuelle lokalitet
 
     if ($time == null) $time = time();
 

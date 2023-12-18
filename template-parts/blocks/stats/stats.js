@@ -1,6 +1,6 @@
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
-    const element = document.querySelector(".lunnar-stats");
+    const element = document.querySelector(".fgc-stats");
 
     if (!element) {
       return;

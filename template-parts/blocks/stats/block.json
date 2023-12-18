@@ -1,5 +1,5 @@
 {
-  "name": "acf/stas",
+  "name": "acf/stats",
   "title": "Statistikker",
   "description": "",
   "style": ["file:../../../css/block-stats.min.css"],

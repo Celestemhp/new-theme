@@ -168,6 +168,9 @@
         fill: var(--color-purple-500);
         display: flex;
       }
+      .logo-transparent {
+        display: none;
+      }
 
       .header-left ul.menu {
         li {
