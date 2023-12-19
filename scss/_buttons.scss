@@ -1,89 +1,89 @@
 @mixin button() {
-    display: flex;
-    position: relative;
-    padding: 0.75rem 2rem;
-    height: 3.25rem;
-    color: var(--color-white);
-    background-color: var(--color-purple-500);
-    // border: 1px solid;
-    font-size: 1rem;
-    line-height: var(--line-height);
-    text-align: center;
-    transition: 0.35s opacity ease, 0.2s color ease;
-    cursor: pointer;
-    text-decoration: none;
-    width: max-content;
-    justify-content: center;
-    align-items: center;
-    border-radius: calc(3.25rem / 2);
+  display: flex;
+  position: relative;
+  padding: 0.75rem 2rem;
+  height: 3.25rem;
+  color: var(--color-white);
+  background-color: var(--color-purple-500);
+  // border: 1px solid;
+  font-size: 1rem;
+  line-height: var(--line-height);
+  text-align: center;
+  transition: 0.35s opacity ease, 0.2s color ease;
+  cursor: pointer;
+  text-decoration: none;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  border-radius: calc(3.25rem / 2);
 
-    &:active,
-    &:hover {
-        opacity: 0.85;
+  &:active,
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.33;
+  }
+
+  &.is-small {
+    padding: 0.45rem 1.5rem !important;
+  }
+
+  @each $name, $color in $colors {
+    &.has-#{$name}-color {
+      color: var(--color-#{$name});
+      border-color: var(--color-#{$name});
     }
 
-    &:disabled {
-        opacity: 0.33;
+    &.has-#{$name}-background-color {
+      color: var(#{"--color-#{$name}-contrast"});
+      border-color: var(--color-#{$name});
+      background-color: var(--color-#{$name});
     }
-
-    &.is-small {
-        padding: 0.45rem 1.5rem !important;
-    }
-
-    @each $name, $color in $colors {
-        &.has-#{$name}-color {
-            color: var(--color-#{$name});
-            border-color: var(--color-#{$name});
-        }
-
-        &.has-#{$name}-background-color {
-            color: var(#{"--color-#{$name}-contrast"});
-            border-color: var(--color-#{$name});
-            background-color: var(--color-#{$name});
-        }
-    }
+  }
 }
 
 .btn {
-    @include button;
+  @include button;
 }
 
 .wp-block-buttons {
-    > .wp-block-button {
-        margin-right: 1rem;
-        margin-bottom: 1rem;
+  > .wp-block-button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 
-        &:last-child {
-            margin-right: 0;
-        }
+    &:last-child {
+      margin-right: 0;
     }
+  }
 }
 
 .wp-block-button {
+  .wp-block-button__link {
+    @include button;
+  }
+
+  &.is-style-outline {
     .wp-block-button__link {
-        @include button;
-    }
+      color: var(--color-purple-500);
+      box-sizing: border-box;
 
-    &.is-style-outline {
-        .wp-block-button__link {
-            color: var(--color-purple-500);
-            box-sizing: border-box;
-
-            @each $name, $color in $colors {
-                &.has-#{$name}-color {
-                    color: var(--color-#{$name}) !important;
-                }
-            }
+      @each $name, $color in $colors {
+        &.has-#{$name}-color {
+          color: var(--color-#{$name}) !important;
         }
+      }
     }
+  }
 }
 
 .wp-block-file {
-    a.wp-block-file__button {
-        @include button;
+  a.wp-block-file__button {
+    @include button;
 
-        &:hover {
-            opacity: 1;
-        }
+    &:hover {
+      opacity: 1;
     }
+  }
 }

@@ -1,111 +1,195 @@
-window.addEventListener("DOMContentLoaded", () => {
-  SVGInject(document.querySelectorAll("img.injectable"));
-});
+const lunnarMenu = new Vue({
+  el: "#lunnar-menu-mobile",
 
-(function () {
-  const desktopMenuBtn = document.querySelectorAll(".toggle-menu");
-  const desktopMenu = document.querySelector("#fgc-menu");
+  data: {
+    active: false,
+    menuItems: [],
+    menu: [],
+    menuLength: 1,
 
-  const header = document.querySelector("#header");
-  const logoStd = document.querySelector(".logo-std");
-  const logoTransparent = document.querySelector(".logo-transparent");
+    levelTitles: {},
 
-  let lastY = window.scrollY;
-  let transparentOnInit = false;
+    levelUrls: {},
+  },
 
-  if (header.classList.contains("is-transparent")) {
-    transparentOnInit = true;
-    // Initially, hide the transparent logo and show the standard logo
-    logoStd.style.display = "block";
-    logoTransparent.style.display = "none";
-  }
+  mounted() {
+    const menu = JSON.parse(mainMenuJSON); // From menu.php
 
-  window.onscroll = function () {
-    const scrollTop = window.scrollY;
+    menu.forEach((item) => {
+      const parentID = Number(item.menu_item_parent);
 
-    console.log("Scroll Top:", scrollTop);
+      // if the menu item does not have a parent, there is no need to proceed
+      if (!parentID) {
+        this.addItem({ ...item, index: 0 });
 
-    if (scrollTop < 2 && transparentOnInit) {
-      console.log("Adding is-transparent class");
-      header.classList.add("is-transparent");
-      // Show the transparent logo and hide the standard logo
-      logoStd.style.display = "none";
-      logoTransparent.style.display = "flex";
-    } else if (scrollTop < 150) {
-      header.classList.remove("is-fixed");
-      header.classList.remove("is-hidden");
-      if (transparentOnInit) {
-        console.log("Adding is-transparent class");
-        header.classList.add("is-transparent");
-        // Show the transparent logo and hide the standard logo
-        logoStd.style.display = "none";
-        logoTransparent.style.display = "flex";
-      }
-    } else {
-      header.classList.remove("is-transparent");
-      if (scrollTop > lastY) {
-        header.classList.add("is-hidden");
-        header.classList.remove("is-fixed");
-      } else {
-        header.classList.remove("is-hidden");
-        if (scrollTop > 5) {
-          header.classList.add("is-fixed");
-        }
+        return;
+        3;
       }
 
-      // Show the standard logo and hide the transparent logo
-      logoStd.style.display = "block";
-      logoTransparent.style.display = "none";
-    }
+      // get the parent object, and add the item to its list of children
+      const parent = this.getParent(parentID, this.menuItems);
 
-    lastY = scrollTop;
-  };
-})();
-
-/**
- * Slide to anchor
- */
-(function ($) {
-  // slide to anchor
-  $(document).on("click", ".slide-to", function (e) {
-    var url = $(this).attr("href");
-    var offset = 0;
-
-    if ($(this).data("offset")) {
-      offset = $(this).data("offset");
-    }
-
-    // check if link contains '#'
-    if (/#/.test(url)) {
-      // get text after hash
-      var link = url.split("#")[1];
-      var target = $("#" + link);
-
-      // check if target div (anchor) exists on page
-      if (target.length == 0) {
+      // if the parent somehow does not exist, we cannot add it
+      if (!parent) {
         return;
       }
 
+      this.addItem({ ...item, index: parent.index + 1 }, parent);
+    });
+
+    // add the outermost layer to this.menu
+    this.menu = [this.menuItems];
+
+    this.menuLength = this.menu.length;
+  },
+
+  watch: {
+    active: function (value) {
+      if (!value) {
+        document.querySelector("html").style.overflowY = "auto";
+
+        setTimeout(() => {
+          if (this.menu.length > 1) {
+            // remove active state for menu items above current level
+            this.menu.forEach((level) => {
+              level.forEach((item) => {
+                item.active = false;
+              });
+            });
+
+            // slice the menu
+            this.menu = this.menu.slice(0, 1);
+
+            this.menuLength = this.menu.length;
+          }
+        }, 200);
+
+        return;
+      }
+
+      document.querySelector("html").style.overflowY = "hidden";
+    },
+  },
+
+  methods: {
+    // Add an item to the menu.
+    addItem(item, parent = null) {
+      if (parent) {
+        parent.children.push(this.getMenuItem(item));
+
+        return;
+      }
+
+      this.menuItems.push(this.getMenuItem(item));
+    },
+
+    // Get the relevant data from the menu item.
+    getMenuItem(item) {
+      return {
+        id: item.ID,
+        title: item.title,
+        content: item.post_content,
+        url: item.url,
+        index: item.index,
+        active: item.active,
+        children: [],
+      };
+    },
+
+    // Get the parent object (recursively).
+    getParent(parentID, submenu) {
+      let parent = null;
+
+      // check the outermost layer
+      submenu.forEach((item) => {
+        if (item.id === parentID) {
+          parent = item;
+        }
+      });
+
+      // if the parent is not found in the outermost layer
+      if (!parent) {
+        submenu.forEach((item) => {
+          if (!parent) {
+            // recursively check children
+            parent = this.getParent(parentID, item.children);
+          }
+        });
+      }
+
+      return parent;
+    },
+
+    // Navigate to url or go to level.
+    go(e, currentItem) {
+      // if the item does not have children, go to url
+      if (!currentItem.children.length) {
+        return;
+      }
+
+      // prevent navigation
       e.preventDefault();
 
-      $("html, body").animate(
-        {
-          scrollTop: target.offset().top - 50,
-        },
-        500
-      );
-    }
-  });
-})(jQuery);
+      this.levelUrls[currentItem.index + 1] = currentItem.url === "#" ? "" : currentItem.url;
 
-// gallery overlay
-(function ($) {
-  $(".wp-block-gallery").magnificPopup({
-    delegate: "a",
-    type: "image",
-    gallery: {
-      enabled: true,
-      tCounter: "<span>%curr% af %total%</span>",
+      console.log(this.levelUrls[currentItem.index + 1]);
+
+      this.levelTitles[currentItem.index + 1] = currentItem.title;
+
+      // remove active state for menu items above current level
+      this.menu.slice(currentItem.index).forEach((level) => {
+        level.forEach((item) => {
+          if (currentItem.id === item.id) {
+            item.active = true;
+            return;
+          }
+
+          item.active = false;
+        });
+      });
+
+      this.menuLength = this.menu.length;
+
+      // if an currentItem is clicked below the current level, slice the menu
+      if (this.menu.length > currentItem.index + 1) {
+        this.menu = this.menu.slice(0, currentItem.index + 1);
+
+        this.menuLength = this.menu.length;
+      }
+
+      // add a copy of the currentItem to this.menu
+      this.menu.push([...currentItem.children]);
+
+      this.menuLength = this.menu.length;
     },
+
+    // Go back one level.
+    back() {
+      if (this.menu.length > 0) {
+        this.menuLength = this.menu.length - 1;
+        // slice the menu
+        setTimeout(() => {
+          this.menu = this.menu.slice(0, this.menu.length - 1);
+        }, 200);
+      }
+    },
+  },
+});
+
+(function ($) {
+  /**
+   * Menu
+   * Toggle the menu on click.
+   */
+
+  $(document).on("click", ".top-menu.for-mobile", (e) => {
+    e.preventDefault();
+    lunnarMenu.active = true;
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lunnarMenu.active = false;
+    }
   });
 })(jQuery);

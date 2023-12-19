@@ -1,5 +1,5 @@
-const fgcMenu = new Vue({
-  el: "#fgc-menu-mobile",
+const lunnarMenu = new Vue({
+  el: "#lunnar-menu-mobile",
 
   data: {
     active: false,
@@ -184,12 +184,12 @@ const fgcMenu = new Vue({
 
   $(document).on("click", ".top-menu.for-mobile", (e) => {
     e.preventDefault();
-    fgcMenu.active = true;
+    lunnarMenu.active = true;
   });
 
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      fgcMenu.active = false;
+      lunnarMenu.active = false;
     }
   });
 })(jQuery);
